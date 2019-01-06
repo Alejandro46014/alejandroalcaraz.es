@@ -50,6 +50,7 @@
 		echo('<script src="js/lightbox.js"></script>');
 	}
 	?>
+<script src="js/jquery.countdown.js"></script>
 <script src="js/jquery.colorbox-min.js"></script>
 	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
   <script src="js/main.js"></script>

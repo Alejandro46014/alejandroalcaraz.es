@@ -517,10 +517,27 @@ div.menu-movil span{
 }
 
 /*====================INDEX==PRESENTACIÖN=================*/
+
+div.presentacion{
+
+	margin: 10px;
+	
+}	
+
+div.foto_perfil img{
+	
+	width: 50%;
+}
+div.foto_perfil{
+	
+	text-align: center;
+	
+}
 div.texto_presentacion p{
 	
 	font-family: 'Sarabun', sans-serif;
-	font-size: 1.2em
+	font-size: 1.2em;
+	text-align: justify;
 }
 
 div.texto_presentacion p spam{
@@ -530,7 +547,8 @@ div.texto_presentacion p spam{
 
 @media only screen and (min-width:768px){
 	
-	div.presentacion{
+div.presentacion{
+	
 		width: 70%;
 		margin: 10px auto;
 	}	
@@ -540,10 +558,12 @@ div.foto_perfil{
 	width: 30%;
 	float: left;
 	height: 190px;
+	
 }
 	
 	div.foto_perfil img{
 		
+		margin-top: 40px;
 		width: 50%;
 	}
 	
@@ -660,12 +680,12 @@ div.detalla-evento{
 	border-bottom: 1px solid #000000;
 }
 
-div.detalla-evento:nth-child(2){
+div.detalle-evento:nth-child(2){
 	
 	border-bottom: none;
 }
 
-div.detalla-evento p{
+div.detalle-evento p{
 	
 	font-size: 1.2em;
 }
@@ -775,13 +795,19 @@ div.contador{
 
 div.contador::before{
 	
-	background-image: url(../img/bg-resumen.jpg);
+	background-image: url(../img/nueva_york/nueva_york_218.jpg);
 	content: '';
 }
 
+div.contador h3{
+	position: relative;
+	text-align: center;
+	font-size: 3em;
+}
 ul.resumen-evento{
 	position: relative;
-	padding: 120px 0;
+	padding: 50px 0 130px 0;
+	
 }
 
 ul.resumen-evento li{
@@ -882,6 +908,7 @@ div.tabla-precio ul li i{
 
 div.mapa{
 	
+	margin: 20px;
 	height: 420px;
 	background-color: green;
 }

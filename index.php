@@ -3,6 +3,7 @@
 
 <section class="section">
 	<div class="contenedor">
+		<h2>Esto que es??</h2>
 		<div class="presentacion clearfix">
 		
 			<div class="foto_perfil">
@@ -15,7 +16,22 @@
 		</div>
 	
 	</div>
+	<h2>Yo estoy aquí, siemmmmmpre!!!</h2>
 	<div class="mapa" id="mapa"></div>
 </section>
+
+<div class="contador parallax">
+	<h3>Y el próximo viaje??</h3>
+	<div class="contenedor cuenta-regresiva">
+		
+		<ul class="resumen-evento clearfix">
+			<li><p id="dias" class="numero"></p>Días</li>
+			<li><p id="horas" class="numero"></p>Horas</li>
+			<li><p id="minutos" class="numero"></p>Minutos</li>
+			<li><p id="segundos" class="numero"></p>Segundos</li>
+		</ul>
+		</div>
+</div>
+
 
 <?php  include_once("plantillas/includes/footer.php"); ?>

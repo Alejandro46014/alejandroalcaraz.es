@@ -254,7 +254,7 @@ $( document ).ready(function() {
 	
 	/*--------------cuenta regresiva--------------------*/
 	
-	$('.cuenta-regresiva').countdown('2019/01/25 00:00:00', function(event){
+	$('.cuenta-regresiva').countdown('2020/08/25 00:00:00', function(event){
 		
 		$('#dias').html(event.strftime('%D'));
 		$('#horas').html(event.strftime('%H'));
