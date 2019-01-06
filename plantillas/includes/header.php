@@ -16,7 +16,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
 	<link rel="stylesheet" href="css/fotorama.css">
-  
+  <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
 	<link rel="stylesheet" href="css/estilos.css">
 	
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">

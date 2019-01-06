@@ -516,6 +516,39 @@ div.menu-movil span{
 	}
 }
 
+/*====================INDEX==PRESENTACIÖN=================*/
+div.texto_presentacion p{
+	
+	font-family: 'Sarabun', sans-serif;
+	font-size: 1.2em
+}
+
+div.texto_presentacion p spam{
+	
+	
+}
+
+@media only screen and (min-width:768px){
+	
+	div.presentacion{
+		width: 70%;
+		margin: 10px auto;
+	}	
+
+div.foto_perfil{
+	
+	width: 30%;
+	float: left;
+	height: 190px;
+}
+	
+	div.foto_perfil img{
+		
+		width: 50%;
+	}
+	
+}
+
 /*---------talleres---------------*/
 
 section.programa{
