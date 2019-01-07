@@ -1,4 +1,5 @@
 <?php
+require_once("modelos/TiposUsuariosModelo.php");
 
 class UsuariosControlador{
 	
@@ -38,7 +39,7 @@ class UsuariosControlador{
 					
 				}
 				
-				$patron="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$";
+				$patron="/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/";
 				
 				if(!preg_match($patron,$password)){
 					
@@ -88,5 +89,26 @@ class UsuariosControlador{
 	
 	#==================LOGUEARSE========================#
 	
+	public function loguearse(){
+		
+		if(isset($_GET['action'])){
+			
+			if(isset($_POST['email_usuario'])){
+				
+				$datosControlador=array('email_usuario'=>$_POST['email_usuario'],
+										'password_usuario'=>$_POST['password_usuario']
+				);
+				
+				$usuario=new UsuariosModelo();
+				
+				$respuesta=$usuario->login($datosControlador);
+				
+				if($respuesta){
+					
+					header("location:?controller=Enlaces&action=navegacionPaginas&pagina=index");
+				}
+			}
+		}
+	}
 }
 

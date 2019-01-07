@@ -1,11 +1,12 @@
 <?php
 require_once("ConectarModelo.php");
+require_once("TiposUsuariosModelo.php");
 
 class UsuariosModelo{
 	
 	protected $id,$nombre,$email,$password,$tipo_usuario;
 	
-	public function __construct(){
+	public function UsuariosModelo(){
 		
 		
 	}
