@@ -1,37 +1,87 @@
-<?php include_once("plantillas/includes/header.php");?>
+<?php
+require_once 'modelos/UsuariosModelo.php';
+require_once('modelos/ConectarModelo.php');
+                session_start();
+                if(!isset($_SESSION['login'])){
+                    
+                    $_SESSION['login']=FALSE;
+                    $_SESSION['usuario']="";
+                }else{
+					
+					require_once 'modelos/UsuariosModelo.php';
+					
+                $id=$_SESSION['usuario'];
+                $usuarioAc= new UsuariosModelo();
+                $usuario=$usuarioAc->getById($id);
+                }
 
 
-<section class="section">
-	<div class="contenedor">
-		<h2>Esto que es??</h2>
-		<div class="presentacion clearfix">
-		
-			<div class="foto_perfil">
-				<img src="img/yo_mismo.gif" alt="Foto Alex"/>
-			</div>
-			<div class="texto_presentacion">
-			<p>Hola soy Alejandro, como veis arriba soy de Valencia. Estoy empezando en el mun do del desarrollo web, este es el motivo de publicar mi página personal, la cual iré ampliando tanto en contenido como en funcionalidades.
-			El objetivo final es crear mi propio blog donde se puedan dejar comentarios y tal vez una sección de entradas para abrir diferentes discusiones. Espero conseguir un buen producto!!!!</p>
-			</div>
-		</div>
+
+
+
+	// la variable controller guarda el nombre del controlador y action guarda la acción por ejemplo registrar 
+
+	//si la variable controller y action son pasadas por la url desde layout.php entran en el if
+
+	if (isset($_GET['controller'])&&isset($_GET['action'])) {
+           
+		$controller=$_GET['controller'];
+
+		$action=$_GET['action'];		
+
+	} else{
+            
+            if($_SESSION['login']==TRUE && $usuario->getTipoUsuario()->getTipoUsuario()=="Administrador"){
+                
+                
+                    
+                    $controller="Administrador";
+                    $action="index";
+				
+                }else{
+                    
+                   
+                    $controller="Enlaces";
+                    $action="navegacionPaginas";
+                }
+           
+        }
+         
+            
+
+         include_once("plantillas/includes/header.php");    
+        
+       
+      //session_start();
+     //session_destroy();
+      //se comprueba si existe alguna sesión o no, entonces se muestra menu de registro o menu del usuario
+        if(isset($_SESSION['login']) && $_SESSION['login']==true){
+			
+           if($usuario->getTipoUsuario()->getTipoUsuario()=="Administrador")
+            $usuario=$usuario->getById($id);
+            
+          require_once 'plantillas/includes/navegacion_administrador.php';
+          
+        }elseif(isset($_SESSION['login']) && $_SESSION['login']){
+           
+            $usuario=$usuario->getById($id);
+			
+            require_once 'plantillas/includes/navegacion_usuarios.php';
+            
+        }else{
+             echo $usuario->getIdUsuario();
+			
+          require_once 'plantillas/includes/navegacion_invitados.php';
+        }
+        
+        
 	
-	</div>
-	<h2>Yo estoy aquí, siemmmmmpre!!!</h2>
-	<div class="mapa" id="mapa"></div>
-</section>
+?>
 
-<div class="contador parallax">
-	<h3>Y el próximo viaje??</h3>
-	<div class="contenedor cuenta">
-		
-		<ul class="resumen-evento clearfix">
-			<li><p id="dias" class="numero"></p>Días</li>
-			<li><p id="horas" class="numero"></p>Horas</li>
-			<li><p id="minutos" class="numero"></p>Minutos</li>
-			<li><p id="segundos" class="numero"></p>Segundos</li>
-		</ul>
-		</div>
-</div>
+
+
+
+
 
 
 <?php  include_once("plantillas/includes/footer.php"); ?>

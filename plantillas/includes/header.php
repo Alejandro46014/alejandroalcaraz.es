@@ -76,21 +76,4 @@
 	  </div><!--.HERO-->
 	</header>
 	
-	<div class="barra">
-		<div class="contenedor clearfix">
-	<div class="logo">
-		<img src="img/logo.png" alt="Logo">
-		</div>
-		<div class="menu-movil">
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-		<nav class="navegacion-principal clearfix">
-			<a href="index.php">Inicio</a>
-			<a href="galeria.php">Galería</a>
-			<a href="login.php">Iniciar sesión</a>
-			<a href="registro.php">Registro</a>
-		</nav>
-	</div><!--.contenedor+clearfix-->
-</div><!--.barra-->
+	

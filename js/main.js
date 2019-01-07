@@ -235,9 +235,36 @@ $( document ).ready(function() {
 		$('#segundos').html(event.strftime('%S'));
 	});
 	
-	/*-------------LIGHTBOX-------------*/
+	/*-------------NAVEGACION GALERÍAS-------------*/
 	
+	$('#nueva_york').hide();
+	$('#melilla').hide();
+	$('#paisajes').hide();
 	
+	$('#btn_nueva_york').on('click',function(){
+		
+		$('#melilla').hide();
+		$('#paisajes').hide();
+		$('#nueva_york').show();
+		
+	});
+	
+	$('#btn_melilla').on('click',function(){
+		
+		
+		$('#paisajes').hide();
+		$('#nueva_york').hide();
+		$('#melilla').show();
+		
+	});
+	
+	$('#btn_paisajes').on('click',function(){
+		
+		$('#melilla').hide();
+		$('#nueva_york').hide();
+		$('#paisajes').show();
+		
+	});
 	
 	/*----------------COLORBOX DESCRIPCIÖN DE LOS INVITADOS------------------*/
 	

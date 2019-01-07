@@ -570,6 +570,36 @@ div.foto_perfil{
 }
 
 /*====================GALERIA================*/
+
+.navegacion_galerias{
+	
+	text-align: center;
+}
+
+#btn_nueva_york,
+#btn_melilla,
+#btn_paisajes{
+	display: inline-block;
+	text-decoration: none;
+	border-radius: 5px;
+	padding: 10px 40px;
+	background-color: #fe4918;
+	color: #ffffff;
+	font-family: 'oswald', sans-serif;
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-top: 20px;
+	transition: all .2s ease;
+}
+
+#btn_nueva_york:hover,
+#btn_melilla:hover,
+#btn_paisajes:hover{
+	
+	color: #fe4918;
+	background-color: #ffffff;
+}
+
 #nueva_york,
 #melilla,
 paisajes{
