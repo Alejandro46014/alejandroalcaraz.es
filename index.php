@@ -22,7 +22,7 @@
 
 <div class="contador parallax">
 	<h3>Y el próximo viaje??</h3>
-	<div class="contenedor cuenta-regresiva">
+	<div class="contenedor cuenta">
 		
 		<ul class="resumen-evento clearfix">
 			<li><p id="dias" class="numero"></p>Días</li>

@@ -35,18 +35,9 @@ L.marker([39.459821, -0.394156]).addTo(map)
 		var btnRegistro=document.getElementById('btnRegistro');
 		var listaProductos=document.getElementById('lista-productos');
 		
-		/*EXTRAS*/
-		
-		var etiquetas=document.getElementById('etiquetas');
-		var camisa_evento=document.getElementById('camisa-evento');
-		var suma=document.getElementById('suma-total');
 		
 		
 			
-		calcular.addEventListener('click', calcularMontos);
-		pase_dosdias.addEventListener('blur', mostrarDias);
-		pase_undia.addEventListener('blur', mostrarDias);
-		pase_completo.addEventListener('blur', mostrarDias);
 		
 		nombre.addEventListener('blur', validarCampos);
 		apellido.addEventListener('blur', validarCampos);
@@ -230,31 +221,13 @@ $( document ).ready(function() {
 	
 	$('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
 	
-	/*--------------programa de conferencias-------------*/
 	
-	$('.ocultar').hide();
-	$('programa-evento .info-curso:first').show();
-	$('.menu-programa a:first-child').addClass('activo');
-	$('.menu-programa a').on('click', function(){
-		$('.menu-programa a').removeClass('activo');
-		$(this).addClass('activo');
-		$('.ocultar').hide();
-		var enlace = $(this).attr('href');
-		$(enlace).fadeIn(1000);
-		
-		return false;
-	});
 	
-	/*----------------------animaciones numeros-------------------*/
 	
-	$('.resumen-evento li:nth-child(1) p').animateNumber({number: 6}, 1200);
-	$('.resumen-evento li:nth-child(2) p').animateNumber({number: 15}, 1200);
-	$('.resumen-evento li:nth-child(3) p').animateNumber({number: 3}, 1200);
-	$('.resumen-evento li:nth-child(4) p').animateNumber({number: 9}, 1200);
 	
 	/*--------------cuenta regresiva--------------------*/
 	
-	$('.cuenta-regresiva').countdown('2020/08/25 00:00:00', function(event){
+	$('.cuenta').countdown('2020/08/25 00:00:00', function(event){
 		
 		$('#dias').html(event.strftime('%D'));
 		$('#horas').html(event.strftime('%H'));
@@ -268,6 +241,6 @@ $( document ).ready(function() {
 	
 	/*----------------COLORBOX DESCRIPCIÖN DE LOS INVITADOS------------------*/
 	
-	$('.invitado-info').colorbox({inline:true,width:"50%"});
+	/*$('.invitado-info').colorbox({inline:true,width:"50%"});*/
 	
 });//fin document ready

@@ -30,30 +30,34 @@
 	
 	<!--LINKADO DE JAVASCRIPT-->
 	
-  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-  <script src="js/jquery.animateNumber.js"></script>
-	<script src="js/jquery.countdown.min.js"></script>
-	<script src="js/jquery.lettering.js"></script>
-	<script src="js/plugins.js"></script>
+  
+  
+	
 
 <?php
 	$archivo=basename($_SERVER['PHP_SELF']);
 	$pagina=str_replace(".php","",$archivo);
 	
-	if($pagina==='invitados' || $pagina==='index'){
+	if($pagina==='index'){
 		
-		echo('<script src="js/jquery.colorbox-min.js"></script>');
-	}elseif($pagina==='conferencias'){
+	echo('<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="js/jquery.countdown.js"></script>
+	<script src="js/jquery.lettering.js"></script>
+<script src="js/fotorama.js"></script>
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>');
 		
-		echo('<script src="js/lightbox.js"></script>');
+	}else{
+		
+		echo('<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="../js/jquery.countdown.js"></script>
+	<script src="../js/jquery.lettering.js"></script>
+<script src="../js/fotorama.js"></script><script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+  <script src="../js/main.js"></script>');
 	}
 	?>
-<script src="js/jquery.countdown.js"></script>
-<script src="js/jquery.colorbox-min.js"></script>
-	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
-  <script src="js/main.js"></script>
+
+	
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
@@ -61,7 +65,7 @@
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-<script src="js/fotorama.js" async defer></script>
+
 </body>
 
 </html>

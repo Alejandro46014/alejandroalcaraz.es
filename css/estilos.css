@@ -281,7 +281,7 @@ h1.nombre-sitio{
 	}
 	.char4{
 		top: 2px;right: 10px;
-		color: #ffa31a;
+		color: #fe4918;
 	}
 	.char5{
 		top: 15px;right: 10px;
@@ -568,6 +568,15 @@ div.foto_perfil{
 	}
 	
 }
+
+/*====================GALERIA================*/
+#nueva_york,
+#melilla,
+paisajes{
+	
+	margin-top: 80px;
+}
+
 
 /*---------talleres---------------*/
 
