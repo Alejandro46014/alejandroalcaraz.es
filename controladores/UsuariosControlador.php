@@ -1,5 +1,6 @@
 <?php
 require_once("modelos/TiposUsuariosModelo.php");
+require_once("EnlacesControlador.php");
 
 class UsuariosControlador{
 	
@@ -7,18 +8,25 @@ class UsuariosControlador{
 		
 		if(isset($_GET['action'])){
 			
-			if(isset($_POST['nombre_usuario'])){
+			if($_POST['nombre_usuario']!=""){
 				
 				$mal=false;
 				$mal2=false;
 				$mal3=false;
+				$mal4=false;
 				
 				$nombre=$_POST['nombre_usuario'];
 				$password=$_POST['password_usuario'];
+				$rpassword=$_POST['rpassword_usuario'];
 				$email=$_POST['email_usuario'];
 				
-				$tipo_usuario=new TiposUsuariosModelo();
-				$patron="/^[a-zA-Z0-9]$/";
+				
+				$patron="/[a-zA-Z0-9]/";
+				
+				echo($nombre."<br>");
+				echo($password."<br>");
+				echo($email."<br>");
+				
 				if(empty($nombre) || empty($password) || empty($email)){
 					
 					echo '<script type="text/javascript">
@@ -32,7 +40,7 @@ class UsuariosControlador{
 				if(!preg_match($patron,$nombre)){
 					
 					echo '<script type="text/javascript">
-				alert("El campo nombre no puede contener simbolos ni caracteres especiales");
+				alert("El campo nombre no puede contener caracteres especiales");
 				</script>';
 					
 					$mal2=true;
@@ -51,27 +59,44 @@ class UsuariosControlador{
 					
 				}
 				
-				if($mal || $mal2 || $mal3){
+				if($password != $rpassword){
+					
+					echo '<script type="text/javascript">
+				alert("Las contraseñas no coinciden");
+				</script>';
+					
+					$mal4=true;
+				}
+				
+				if($mal || $mal2 || $mal3 || $mal4){
 					
 					echo '<script type="text/javascript">
 				alert("Revise los campos e intentelo de nuevo");
 				</script>';
 					
-					header("location:?controller=Enlaces&action=navegacionPaginas&pagina=registro");
+					$controller=new EnlacesControlador();
+					$_GET['pagina']="registro";
+					$controller->navegacionPaginas();
+					
 					
 				}else{
+					
+					$encriptar=crypt($password,'$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 					
 					$usuario=new UsuariosModelo();
 					$usuario->setNombreUsuario($nombre);
 					$usuario->setEmailUsuario($email);
-					$usuario->setPasswordUsuario($password);
+					$usuario->setPasswordUsuario($encriptar);
+					$tipo_usuario=new TiposUsuariosModelo();
 					$usuario->setTipoUsuario($tipo_usuario);
 					
 					$resultado=$usuario->guardar();
 					
 					if($resultado){
 						
-						header("location:?controller=Enlaces&action=navegacionPaginas&pagina=login");
+						$controller=new EnlacesControlador();
+					$_GET['pagina']="login";
+					$controller->navegacionPaginas();
 						
 					}else{
 						
@@ -79,7 +104,9 @@ class UsuariosControlador{
 				alert("Revise los campos e intentelo de nuevo");
 				</script>';
 						
-						header("location:?controller=Enlaces&action=navegacionPaginas&pagina=registro");
+						$controller=new EnlacesControlador();
+					$_GET['pagina']="registro";
+					$controller->navegacionPaginas();
 					}
 				}
 			}
@@ -95,8 +122,10 @@ class UsuariosControlador{
 			
 			if(isset($_POST['email_usuario'])){
 				
+				$encriptar=crypt($_POST['password_usuario'],'$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+				
 				$datosControlador=array('email_usuario'=>$_POST['email_usuario'],
-										'password_usuario'=>$_POST['password_usuario']
+										'password_usuario'=>$encriptar
 				);
 				
 				$usuario=new UsuariosModelo();
@@ -105,7 +134,20 @@ class UsuariosControlador{
 				
 				if($respuesta){
 					
-					header("location:?controller=Enlaces&action=navegacionPaginas&pagina=index");
+					
+					
+					echo '<script type="text/javascript">
+						window.location.assign("index.php");
+						</script>';
+					
+					$controller=new EnlacesControlador();
+					$_GET['pagina']="presentacion";
+					$controller->navegacionPaginas();
+				}else{
+					
+					$controller=new EnlacesControlador();
+					$_GET['pagina']="login";
+					$controller->navegacionPaginas();
 				}
 			}
 		}

@@ -10,10 +10,10 @@
 		
 		<div class="col_formulario">
 		<label for="password_usuario">Contraseña</label>
-			<input type="password" name="password_usuario" id="password_usuario" pattern="/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/" placeholder="ej: Masdem22" required/>
+			<input type="password" name="password_usuario" id="password_usuario" placeholder="ej: Masdem22" required/>
 			</div>
 			<div class="col_formulario">
-			<input type="submit" name="login" id="login" class="buttom_green"/>
+			<input type="submit" name="login" id="login" class="buttom_green" value="Acceder"/>
 			</div>
 		</form>
 	

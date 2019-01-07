@@ -1,6 +1,7 @@
 <?php
 require_once("ConectarModelo.php");
 require_once("TiposUsuariosModelo.php");
+require_once("controladores/EnlacesControlador.php");
 
 class UsuariosModelo{
 	
@@ -33,7 +34,7 @@ class UsuariosModelo{
 		$this->password=$password;
 	}
 	
-	public function setTipodUsuario($tipo_usuario){
+	public function setTipoUsuario($tipo_usuario){
 		
 		$this->tipo_usuario=$tipo_usuario;
 	}
@@ -90,7 +91,7 @@ class UsuariosModelo{
 			$usuario->nombre=$resultado['nombre_usuario'];
 			$usuario->password=$resultado['password_usuario'];
 			$usuario->email=$resultado['email_usuario'];
-			$usuario->tipo_usuario=new TiposUsuariosModelo($resultado['tipos_usuarios_id_tipo_usuario']);
+			$usuario->tipo_usuario=new TiposUsuariosModelo();
 			
 		}catch(PDOException $e){
 			
@@ -132,22 +133,25 @@ class UsuariosModelo{
 			
 			$consulta->execute();
 			
-			$num_filas=$consul->rowCount();
+			$num_filas=$consulta->rowCount();
 			
 			$consulta->closeCursor();
 			
 			if($num_filas==0){
 				
-				$sql="INSERT INTO usuarios (nombre_usuario,email_usuario.password_usuario,tipos_usuarios_id_tipo_usuario) VALUES (:nombre,:email,:password,:tipo_usuario)";
+				$sql="INSERT INTO usuarios (tipos_usuarios_id_tipo_usuario,nombre_usuario,email_usuario, password_usuario) VALUES (:tipo_usuario,:nombre,:email,:password)";
 			
 			$consulta=$conexion->prepare($sql);
 			
 			$consulta->bindParam(':nombre',$nombre,PDO::PARAM_STR);
 			$consulta->bindParam(':email',$email,PDO::PARAM_STR);
-			$consulta->bindParam(':nombre',$password,PDO::PARAM_STR);
-			$consulta->bindParam(':nombre',$tipo_usuario,PDO::PARAM_INT);
+			$consulta->bindParam(':password',$password,PDO::PARAM_STR);
+			$consulta->bindParam(':tipo_usuario',$tipo_usuario,PDO::PARAM_INT);
 			
-			$resultado=$consulta->execute();
+			if($consulta->execute()){
+				
+				$resultado=true;
+			}
 				
 			$consulta->closeCursor();
 			
@@ -157,7 +161,9 @@ class UsuariosModelo{
 				alert("Ya existe un usuario con esas credenciales,por favor inicie sesión");
 				</script>';
 
-			header("location:?controller=Enlaces&action=navegacionPaginas&pagina=login");
+				$controller=new EnlacesControlador();
+				$_GET['pagina']="login";
+				$controller->navegacionPaginas();
 				
 			}
 		}catch(PDOException $e){
@@ -174,8 +180,8 @@ class UsuariosModelo{
 	
 	public function login($datos){
 		
-		$email=$datos['email'];
-		$password=$datos['password'];
+		$email=$datos['email_usuario'];
+		$password=$datos['password_usuario'];
 		
 		
 		try{
@@ -207,6 +213,8 @@ class UsuariosModelo{
 				session_start();
 				$_SESSION['login']=true;
 				$_SESSION['id']=$array['id_usuario'];
+				
+				$resultado=true;
 			}
 			
 		}catch(PDOException $e){
@@ -214,6 +222,7 @@ class UsuariosModelo{
 			die("No se pudo conectar con la BBDD ".$e->getMessage());
 		}
 		
+		return($resultado);
 	}
 	
 	

@@ -10,6 +10,8 @@ require_once('modelos/ConectarModelo.php');
                 }else{
 					
                 $id=$_SESSION['usuario'];
+					$usuario=new UsuariosModelo();
+					$usuario=$usuario->getById($id);
                
                 }
 

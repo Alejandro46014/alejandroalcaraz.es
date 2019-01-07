@@ -51,7 +51,7 @@
 
 	$controllers= array(
 
-						'Usuarios'=>['cerrarSesion','index','registrar','actualizarUsuario','listarUsuarios','listarUsuarioId','modificarUsuario','darseBajaUsuario','crearUsuario','login','loguearse','bajaVista'],
+						'Usuarios'=>['cerrarSesion','index','actualizarUsuario','listarUsuarios','listarUsuarioId','modificarUsuario','darseBajaUsuario','crearUsuario','login','loguearse','bajaVista'],
                         'Enlaces'=>['navegacionPaginas'],
                         'Entradas'=>['listarEntradas', 'nuevaEntrada','eliminarEntrada']
                                                 
