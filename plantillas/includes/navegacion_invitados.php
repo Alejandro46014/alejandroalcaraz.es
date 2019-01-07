@@ -16,3 +16,4 @@
 		</nav>
 	</div><!--.contenedor+clearfix-->
 </div><!--.barra-->
+<?php require_once("controladores/ControladorFrontal.php"); ?>

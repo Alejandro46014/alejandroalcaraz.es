@@ -1,4 +1,4 @@
-<?php include_once("../plantillas/includes/header.php");?>
+
 
 <section class="seccion">
 	<div class="navegacion_galerias">
@@ -86,4 +86,3 @@
 
 </section>
 
-<?php  include_once("../plantillas/includes/footer.php"); ?>
