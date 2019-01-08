@@ -2,12 +2,13 @@
 
 <section class="seccion">
 	<div class="navegacion_galerias">
+		<h2>Galerías</h2>
 		<button id="btn_nueva_york">New York</button>
 		<button id="btn_melilla">Melilla</button>
 		<button id="btn_paisajes">Paisajes</button>
 	</div>
-<div class="contenedor">
-	<h2>Galerías</h2>
+
+	
 	<div id="nueva_york">
 		<h2>New York</h2>
 		<div class="fotorama" data-nav="thumbs" data-navposition="top" data-transition="dissolve">
@@ -82,7 +83,7 @@
 			
 		</div>
 	</div>
-</div>
+
 
 </section>
 

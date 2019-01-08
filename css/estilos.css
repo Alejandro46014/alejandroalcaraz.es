@@ -455,12 +455,12 @@ nav.navegacion-principal a{
 	
 }
 
-nav.navegacion-principal a:last-child{
+nav.navegacion-principal a.registro{
 		color: #fe4918;
 		border:  1px solid #fe4918;
 	}
 	
-	nav.navegacion-principal a:last-child:hover{
+	nav.navegacion-principal a.registro:hover{
 		color: #ffffff;
 	}
 	
@@ -502,18 +502,29 @@ nav.navegacion-principal a:last-child{
 	
 }
 	
-	nav.navegacion-principal a:last-child{
+	nav.navegacion-principal a.registro{
 		color: #fe4918;
 		border:  1px solid #fe4918;
 	}
 	
-	nav.navegacion-principal a:last-child:hover{
+	nav.navegacion-principal a.registro:hover{
 		color: #ffffff;
 	}
 	
 	nav.navegacion-principal a:hover{
 		
 		background-color: #fe4918;
+	}
+	
+	div.menu_usuarios{
+		
+		width: 150px;
+		
+		float: right;
+	}
+	div.menu_extendido{
+		
+		width: 150px;
 	}
 }
 	
@@ -547,6 +558,11 @@ div.menu-movil span{
 @media only screen and (min-width:768px){
 	
 	div.menu-movil{
+		display: none;
+	}
+	
+	div.menu_extendido{
+		
 		display: none;
 	}
 }

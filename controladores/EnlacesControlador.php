@@ -20,9 +20,26 @@ class EnlacesControlador{
 				
 				require_once("plantillas/registro.php");
 				
+			}elseif($pagina=="modificarPerfil"){
+				
+				require_once("plantillas/modificarperfil.php");
+				
 			}elseif($pagina=="login"){
 				
 				require_once("plantillas/login.php");
+				
+			}elseif($pagina=="cerrarSesion"){
+				
+				session_start();
+				$_SESSION['login']=false;
+				$_SESSION['usuario']="";
+				session_destroy();
+				
+				echo '<script type="text/javascript">
+						window.location.assign("index.php");
+						</script>';
+				
+				require_once("plantillas/presentacion.php");
 				
 			}else{
 				

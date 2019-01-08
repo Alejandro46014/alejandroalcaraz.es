@@ -209,6 +209,12 @@ $( document ).ready(function() {
 		
 	});
 	
+	$('.user_icono').on('click',function(){
+		
+		$('.extendido_usuarios').slideToggle();
+		
+	});
+	
 	/*---------lettering------------*/
 	
 	$('.nombre-sitio').lettering();
