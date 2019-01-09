@@ -8,10 +8,12 @@
 		<button id="btn_paisajes">Paisajes</button>
 	</div>
 
+	<div class="contenedor">
 	
 	<div id="nueva_york">
 		<h2>New York</h2>
-		<div class="fotorama" data-nav="thumbs" data-navposition="top" data-transition="dissolve">
+		<div class="fotorama" data-nav="thumbs" data-navposition="top" data-transition="dissolve" data-width="1100"
+     data-maxwidth="100%">
 			
   			<a href="img/nueva_york/nueva_york_171.jpg"><img src="img/nueva_york/pequenas/nueva_york_171.jpg" data-caption="Nosoatros y el Rockefeller center"></a>
  			<a href="img/nueva_york/nueva_york_172.jpg"><img src="img/nueva_york/pequenas/nueva_york_172.jpg" data-caption="Buen sitio para la puesta"></a>
@@ -83,7 +85,7 @@
 			
 		</div>
 	</div>
-
+</div>
 
 </section>
 

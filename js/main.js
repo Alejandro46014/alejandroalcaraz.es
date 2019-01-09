@@ -1,3 +1,42 @@
+
+
+/*=============================================
+
+VALIDAR INGRESO
+
+=============================================*/
+
+function validarIngreso(){
+	
+	var usuario = document.querySelector("#email_usuario").value;	
+
+	var password = document.querySelector("#password_usuario").value;
+	
+	if(usuario === ""){
+		
+		document.querySelector("label[for='email_usuario']").innerHTML += "<br><spam>El campo correo electrónico no puede estar vacío.</spam>";
+
+
+
+			return false;
+	}
+	
+	if(password === ""){
+		
+		document.querySelector("label[for='password_usuario']").innerHTML += "<br><spam>El campo contraseña no puede estar vacío</spam>.";
+
+
+
+			return false;
+	}
+	
+	return true;
+}
+
+
+/*=====  FIN VALIDAR INGRESO  ======*/
+
+
 (function(){
 	
 	"use strict";
@@ -6,43 +45,41 @@
 	
 	document.addEventListener('DOMContentLoaded', function(){
 		
-		var map = L.map('mapa').setView([39.459821, -0.394156], 16);
+		/*var map = L.map('mapa').setView([39.551160,-0.626431], 16);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-L.marker([39.459821, -0.394156]).addTo(map)
+L.marker([39.551160,-0.626431]).addTo(map)
     .bindPopup('EnanoMaligno')
-    .openPopup();
+    .openPopup();*/
 		
 		//DATOS PERSONALES
 		
-		var nombre=document.getElementById('nombre');
-		var apellido=document.getElementById('apellido');
-		var email=document.getElementById('email');
+		/*var nombre=document.getElementById('nombre_usuario');
+		var email=document.getElementById('email_usuario');
+		var password=document.getElementById('password_usuario');
+		var rpassword=document.getElementById('rpassword_usuario');
+		var patron=new RegExp("?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}");
 		
-		//CAMPOS PASES
-		
-		var pase_undia=document.getElementById('pase-1dias');
-		var pase_dosdias=document.getElementById('pase-2dias');
-		var pase_completo=document.getElementById('pase-dias');
 		
 		//BOTONES Y DIVS
-		
-		var calcular=document.getElementById('calcular');
 		var error=document.getElementById('error');
-		var btnRegistro=document.getElementById('btnRegistro');
-		var listaProductos=document.getElementById('lista-productos');
+		
 		
 		
 		
 			
 		
 		nombre.addEventListener('blur', validarCampos);
-		apellido.addEventListener('blur', validarCampos);
+		password.addEventListener('blur', validarCampos);
+		password.addEventListener('blur', validarPatron);
+		rpassword.addEventListener('blur', validarPassword);
 		email.addEventListener('blur', validarCampos);
 		email.addEventListener('blur', validarEmail);
+		
+		
 		
 		function validarCampos(){
 			
@@ -73,6 +110,34 @@ L.marker([39.459821, -0.394156]).addTo(map)
 			}
 		}
 		
+		function validarPassword(){
+			
+			if(this.value != password){
+				error.style.display='block';
+				error.innerHTML='Las contraseñas no coinciden';
+				this.style.border='1px solid red';
+				error.style.border='1px solid red';
+			}else{
+				error.style.display='none';
+				this.style.border='1px solid green';
+			}
+			
+			
+		}
+		
+		function validarPatron(){
+			
+			if(patron.test(this.value)){
+				error.style.display='block';
+				error.innerHTML='La contraseña debe tener una longitud de 8 caracteres y contener minúsculas, mayúsculas y numeros';
+				this.style.border='1px solid red';
+				error.style.border='1px solid red';
+			}else{
+				error.style.display='none';
+				this.style.border='1px solid green';
+			}
+		}
+		*/
 		/*apellido.addEventListener('blur', function(){
 			if(this.value === ''){
 				error.style.display='block';
@@ -91,7 +156,7 @@ L.marker([39.459821, -0.394156]).addTo(map)
 			}
 		});*/
 		
-		function calcularMontos(event){
+		/*function calcularMontos(event){
 			
 			event.preventDefault();
 			
@@ -172,7 +237,7 @@ L.marker([39.459821, -0.394156]).addTo(map)
 				document.getElementById(diasElegidos[i]).style.display="block";
 			}
 		}
-	
+	*/
 	});//DOM CONTENT LOADED
 	
 })();
@@ -221,11 +286,19 @@ $( document ).ready(function() {
 	
 	/*------------------addclass body---------*/
 	
-	$('body.conferencias .navegacion-principal a:contains("Conferencias")').addClass('activo');
+	$('body.index .navegacion-principal a:contains("Inicio")').addClass('activo');
 	
-	$('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
+	$('body.galeria .navegacion-principal a:contains("Galería")').addClass('activo');
 	
-	$('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
+	$('body.registro .navegacion-principal a:contains("Registro")').removeClass('enlace_registro');
+	
+	$('body.registro .navegacion-principal a:contains("Registro")').addClass('activo_registro');
+	
+	$('body.login .navegacion-principal a:contains("Iniciar sesión")').addClass('activo');
+	
+	$('body.entradas .navegacion-principal a:contains("Entradas")').addClass('activo');
+	
+	$('body.modificarPerfil .navegacion-principal a:contains("Modificar perfil")').addClass('activo');
 	
 	
 	

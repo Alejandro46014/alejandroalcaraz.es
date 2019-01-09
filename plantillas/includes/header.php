@@ -12,10 +12,9 @@
 	
 	<?php
 	$archivo=basename($_SERVER['PHP_SELF']);
-	$pagina=str_replace(".php","",$archivo);
-	if($pagina==='index'){
-		
-	echo('<link rel="manifest" href="site.webmanifest">
+	$pagina=$_GET['pagina'];
+	?>
+	<link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
@@ -23,28 +22,12 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
 	<link rel="stylesheet" href="css/fotorama.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
   <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
 	<link rel="stylesheet" href="css/estilos.css">
 	
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">');
-		
-	}else{
-		
-		echo('<link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="../css/normalize.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
-	<link rel="stylesheet" href="../css/fotorama.css">
-  <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
-	<link rel="stylesheet" href="../css/estilos.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">');
-	}
-	?>
+	
 </head>
 
 <body class="<?php echo($pagina); ?>">

@@ -8,7 +8,7 @@ class UsuariosControlador{
 		
 		if(isset($_GET['action'])){
 			
-			if($_POST['nombre_usuario']!=""){
+			if($_POST['nombre_usuario']!="" || $_POST['email_usuario']!="" || $_POST['password_usuario']!="" || $_POST['rpassword_usuario']!=""){
 				
 				$mal=false;
 				$mal2=false;
@@ -109,6 +109,15 @@ class UsuariosControlador{
 					$controller->navegacionPaginas();
 					}
 				}
+			}else{
+				
+				echo '<script type="text/javascript">
+				alert("Todos los campos son obligatorios");
+				</script>';
+						
+						$controller=new EnlacesControlador();
+					$_GET['pagina']="registro";
+					$controller->navegacionPaginas();
 			}
 		}
 	}
@@ -149,6 +158,16 @@ class UsuariosControlador{
 					$_GET['pagina']="login";
 					$controller->navegacionPaginas();
 				}
+			}else{
+				
+				echo '<script type="text/javascript">
+				alert("Debe rellenar los campos");
+				</script>';
+						
+						$controller=new EnlacesControlador();
+					$_GET['pagina']="login";
+					$controller->navegacionPaginas();
+				
 			}
 		}
 	}

@@ -117,6 +117,7 @@ h2{
 	text-transform: uppercase;
 	font-size: 2.4em;
 	text-align: center;
+	margin-top: 50px;
 
 }
 h2::after{
@@ -215,9 +216,28 @@ ul{
 	margin: 0 auto;
 }
 
+.contenedor_mapa{
+	
+	width: 98%;
+	margin: 20px auto;
+	
+}
+
+.contenedor_mapa iframe{
+	
+	width: 100%;
+}
+
+	
+
 @media only screen and (min-width:480px){
 	
 	.contenedor{
+	width: 95%;
+	
+}
+	
+	.contenedor_mapa{
 	width: 95%;
 	
 }
@@ -231,15 +251,30 @@ ul{
 	
 }
 	
+	.contenedor_mapa{
+		
+	width: 98%;
+	
+}
+	
+	
 }
 
 @media only screen and (min-width:992px){
 	
 	.contenedor{
 	width: 90%;
-		max-width: 1100px;
+	max-width: 1100px;
 	
 }
+	
+	.contenedor_mapa{
+		
+	width: 98%;
+
+	
+}
+	
 	
 }
 
@@ -434,6 +469,17 @@ div.logo img{
 
 /*-----------------NAVEGACIÓN PRINCIPAL---------------------*/
 
+.activo{
+	 
+	border-bottom: 2px solid #fe4918;
+}
+
+.activo_registro{
+	 
+border-bottom: 2px solid #fe4918;
+	
+}
+
 nav.navegacion-principal{
 	display: none;
 	width: 100%;
@@ -455,12 +501,12 @@ nav.navegacion-principal a{
 	
 }
 
-nav.navegacion-principal a.registro{
+nav.navegacion-principal a.enlace_registro{
 		color: #fe4918;
 		border:  1px solid #fe4918;
 	}
 	
-	nav.navegacion-principal a.registro:hover{
+	nav.navegacion-principal a.enlace_registro:hover{
 		color: #ffffff;
 	}
 	
@@ -621,6 +667,15 @@ div.foto_perfil{
 }
 
 /*------------------------FORMULARIOS-------------------------*/
+div.terminos{
+	
+	text-align: center;
+}
+
+div.terminos input{
+	
+	display: inline-block;
+}
 
 div.cabecera_formularios h3{
 	font-size: 2em;
@@ -1353,10 +1408,8 @@ p.copyright{
 
 /*------------CONFERENCIAS------------*/
 
-  .activo{
-	 
-	border-bottom: 2px solid #fe4918;
-}
+ 
+
 div.galeria a{
 	
 	display: inline-block;

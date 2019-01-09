@@ -12,7 +12,7 @@
 			<a href="?controller=Enlaces&action=navegacionPaginas&pagina=index">Inicio</a>
 			<a href="?controller=Enlaces&action=navegacionPaginas&pagina=galeria">Galería</a>
 			<a href="?controller=Enlaces&action=navegacionPaginas&pagina=login">Iniciar sesión</a>
-			<a class="registro" href="?controller=Enlaces&action=navegacionPaginas&pagina=registro">Registro</a>
+			<a class="enlace_registro" href="?controller=Enlaces&action=navegacionPaginas&pagina=registro">Registro</a>
 		</nav>
 	</div><!--.contenedor+clearfix-->
 </div><!--.barra-->
