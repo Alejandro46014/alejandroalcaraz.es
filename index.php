@@ -50,7 +50,7 @@ require_once('modelos/ConectarModelo.php');
          
             
 
-         include_once("plantillas/includes/header.php");    
+         require_once("plantillas/includes/header.php");    
         
        
       //session_start();

@@ -1,5 +1,3 @@
-
-
 /*=============================================
 
 VALIDAR INGRESO
@@ -16,7 +14,7 @@ function validarIngreso(){
 		
 		document.querySelector("label[for='email_usuario']").innerHTML += "<br><spam>El campo correo electrónico no puede estar vacío.</spam>";
 
-
+		
 
 			return false;
 	}
@@ -25,8 +23,8 @@ function validarIngreso(){
 		
 		document.querySelector("label[for='password_usuario']").innerHTML += "<br><spam>El campo contraseña no puede estar vacío</spam>.";
 
-
-
+		
+		
 			return false;
 	}
 	
@@ -34,14 +32,16 @@ function validarIngreso(){
 }
 
 
-/*=====  FIN VALIDAR INGRESO  ======*/
+
 
 
 (function(){
 	
 	"use strict";
 
-	
+
+
+/*=====  FIN VALIDAR INGRESO  ======*/	
 	document.addEventListener('DOMContentLoaded', function(){
 		
 		/*var map = L.map('mapa').setView([39.551160,-0.626431], 16);

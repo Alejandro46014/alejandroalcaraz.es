@@ -672,6 +672,12 @@ div.terminos{
 	text-align: center;
 }
 
+div.formulario_small label spam,
+div.formulario label spam{
+	
+	color: red;
+}
+
 div.terminos input{
 	
 	display: inline-block;
