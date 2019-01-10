@@ -40,8 +40,7 @@ function validarIngreso(){
 (function(){
 	
 	"use strict";
-	
-	var regalo=document.getElementById('regalo');
+
 	
 	document.addEventListener('DOMContentLoaded', function(){
 		
@@ -61,27 +60,27 @@ L.marker([39.551160,-0.626431]).addTo(map)
 		var email=document.getElementById('email_usuario');
 		var password=document.getElementById('password_usuario');
 		var rpassword=document.getElementById('rpassword_usuario');
-		var patron=new RegExp("?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}");
+		var patron=/^[a-zA-Z0-9]*$/;*/
 		
 		
 		//BOTONES Y DIVS
-		var error=document.getElementById('error');
+		//var error=document.getElementById('error');
 		
 		
 		
 		
 			
 		
-		nombre.addEventListener('blur', validarCampos);
+		/*nombre.addEventListener('blur', validarCampos);
 		password.addEventListener('blur', validarCampos);
 		password.addEventListener('blur', validarPatron);
 		rpassword.addEventListener('blur', validarPassword);
 		email.addEventListener('blur', validarCampos);
-		email.addEventListener('blur', validarEmail);
+		email.addEventListener('blur', validarEmail);*/
 		
 		
 		
-		function validarCampos(){
+		/*function validarCampos(){
 			
 			if(this.value === ''){
 				error.style.display='block';
@@ -136,8 +135,8 @@ L.marker([39.551160,-0.626431]).addTo(map)
 				error.style.display='none';
 				this.style.border='1px solid green';
 			}
-		}
-		*/
+		}*/
+		
 		/*apellido.addEventListener('blur', function(){
 			if(this.value === ''){
 				error.style.display='block';

@@ -34,28 +34,14 @@
   
 	
 
-<?php
-	$archivo=basename($_SERVER['PHP_SELF']);
-	$pagina=str_replace(".php","",$archivo);
+
 	
-	if($pagina==='index'){
-		
-	echo('<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="js/jquery.countdown.js"></script>
 	<script src="js/jquery.lettering.js"></script>
 <script src="js/fotorama.js"></script>
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
-  <script src="js/main.js"></script>');
-		
-	}else{
-		
-		echo('<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script src="../js/jquery.countdown.js"></script>
-	<script src="../js/jquery.lettering.js"></script>
-<script src="../js/fotorama.js"></script><script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
-  <script src="../js/main.js"></script>');
-	}
-	?>
+  <script src="js/main.js"></script>
 
 	
 
