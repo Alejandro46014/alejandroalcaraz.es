@@ -2,9 +2,10 @@
 <div class="contenedor">
 	<div class="formulario clearfix">
 		<h2>Registro</h2>
+		<div ><p id="fallo"></p></div>
 		<form method="post" action="?controller=Usuarios&action=crearUsuario" onSubmit="return validarRegistro()">
 		<div class="col_2_formulario">	
-		<label for="email_usuario">Nombre</label>
+		<label for="nombre_usuario">Nombre</label>
 			<input type="text" name="nombre_usuario" id="nombre_usuario" placeholder="Nombre" />
 		</div>	
 			
@@ -19,7 +20,7 @@
 			</div>
 			
 			<div class="col_2_formulario">
-		<label for="password_usuario">Repite contraseña</label>
+		<label for="rpassword_usuario">Repite contraseña</label>
 			<input type="password" name="rpassword_usuario" id="rpassword_usuario"/>
 			</div>
 			<div class="terminos">

@@ -1,3 +1,213 @@
+
+/*=============================================
+
+VALIDAR REGISTRO
+
+=============================================*/
+
+function validarRegistro(){
+
+
+
+	var usuario = document.querySelector("#nombre_usuario").value;	
+
+
+
+	var password = document.querySelector("#password_usuario").value;
+
+	
+	var rpassword = document.querySelector("#rpassword_usuario").value;
+
+
+	var email = document.querySelector("#email_usuario").value;
+
+
+
+	var terminos = document.querySelector("#terminos").checked;
+
+
+
+	/* VALIDAR USUARIO */
+
+
+
+	if(usuario != ""){
+
+
+
+		var caracteres = usuario.length;
+
+		var expresion = /^[a-zA-Z0-9]*$/;
+
+
+
+		if(caracteres > 10){
+
+
+
+			document.getElementById("fallo").innerHTML = "Escriba por favor menos de 10 caracteres.";
+
+			document.getElementById("nombre_usuario").style.border="2px solid red";
+
+			return false;
+
+		}
+
+
+
+		if(!expresion.test(usuario)){
+
+
+
+			document.getElementById("fallo").innerHTML = "No escriba caracteres especiales.";
+
+
+			document.getElementById("nombre_usuario").style.border="2px solid red";
+
+			return false;
+
+
+
+		}
+
+
+
+	}
+
+
+
+	/* VALIDAR PASSWORD */
+
+
+
+	if(password != ""){
+
+
+
+		var caracteres = password.length;
+
+		var expresion = /^[a-zA-Z0-9]*$/;
+
+
+
+		if(caracteres < 8){
+
+
+
+			document.getElementById("fallo").innerHTML = "Escriba por favor un mínimo de 8 caracteres.";
+
+
+			document.getElementById("password_usuario").style.border="2px solid red";
+
+			return false;
+
+		}
+
+
+
+		if(!expresion.test(password)){
+
+
+
+			document.getElementById("fallo").innerHTML = "No escriba caracteres especiales.";
+
+
+			document.getElementById("password_usuario").style.border="2px solid red";
+
+			return false;
+
+
+
+		}
+		
+		if(rpassword != password){
+			
+			
+			document.getElementById("fallo").innerHTML = "Las contraseñas no coinciden.";
+			
+			document.getElementById("password_usuario").style.border="2px solid red";
+			document.getElementById("rpassword_usuario").style.border="2px solid red";
+			
+			
+			
+			return false;
+		}
+
+
+
+	}
+
+
+
+	/* VALIDAR EMAIL*/
+
+
+
+	if(email != ""){
+
+
+
+		var expresion = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+
+
+		if(!expresion.test(email)){
+
+
+
+			document.getElementById("fallo").innerHTML = "Escriba correctamente el Email.";
+
+
+			document.getElementById("email_usuario").style.border="2px solid red";
+
+			return false;
+
+
+
+		}
+
+
+
+	}
+
+
+
+	/* VALIDAR TÉRMINOS*/
+
+
+
+	if(!terminos){
+
+
+
+		document.getElementById("fallo").innerHTML = "No se logró el registro, acepte términos y condiciones!";
+
+		document.querySelector("#nombre_usuario").value = usuario;	
+
+		document.querySelector("#password_usuario").value = password;
+		
+		document.querySelector("#rpassword_usuario").value = rpassword;
+
+		document.querySelector("#email_usuario").value = email;
+
+
+
+		return false;
+
+	}
+
+	
+
+return true;
+
+
+
+}
+
+/*=====  FIN VALIDAR REGISTRO  ======*/
+
+
+
 /*=============================================
 
 VALIDAR INGRESO
@@ -12,18 +222,29 @@ function validarIngreso(){
 	
 	if(usuario === ""){
 		
-		document.querySelector("label[for='email_usuario']").innerHTML += "<br><spam>El campo correo electrónico no puede estar vacío.</spam>";
+		document.getElementById("fallo").innerHTML = "El campo correo electrónico no puede estar vacío.";
 
+		document.getElementById("email_usuario").style.border="2px solid red";
 		
+		if(password !== ""){
+			
+			document.getElementById("password_usuario").style.border="2px solid green";
+		}
 
 			return false;
 	}
 	
 	if(password === ""){
 		
-		document.querySelector("label[for='password_usuario']").innerHTML += "<br><spam>El campo contraseña no puede estar vacío</spam>.";
+		document.getElementById("fallo").innerHTML = "El campo contraseña no puede estar vacío.";
 
+		document.getElementById("password_usuario").style.border="2px solid red";
 		
+		if(usuario !== ""){
+			
+			document.getElementById("email_usuario").style.border="2px solid green";
+		}
+
 		
 			return false;
 	}

@@ -24,6 +24,10 @@ class EnlacesControlador{
 				
 				require_once("plantillas/modificarperfil.php");
 				
+			}elseif($pagina=="#"){
+				
+				exit();
+				
 			}elseif($pagina=="login"){
 				
 				require_once("plantillas/login.php");

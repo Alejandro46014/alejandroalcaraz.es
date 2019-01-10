@@ -5,11 +5,11 @@ require_once('modelos/ConectarModelo.php');
                 if(!isset($_SESSION['login'])){
                     
                     $_SESSION['login']=FALSE;
-                    $_SESSION['usuario']="";
+                    $_SESSION['id']="";
 					
                 }else{
 					
-                $id=$_SESSION['usuario'];
+                $id=$_SESSION['id'];
 					$usuario=new UsuariosModelo();
 					$usuario=$usuario->getById($id);
                
@@ -57,8 +57,8 @@ require_once('modelos/ConectarModelo.php');
      //session_destroy();
       //se comprueba si existe alguna sesión o no, entonces se muestra menu de registro o menu del usuario
        if(isset($_SESSION['login']) && $_SESSION['login']){
-           
-            $usuario=$usuario->getById($id);
+          
+            //$usuario=$usuario->getById($id);
 			
             require_once 'plantillas/includes/navegacion_usuarios.php';
             

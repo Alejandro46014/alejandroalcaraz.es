@@ -2,6 +2,7 @@
 <div class="contenedor">
 	<div class="formulario_small clearfix">
 		<h2>Login</h2>
+		<div><p id="fallo"></p></div>
 		<form method="post" action="?controller=Usuarios&action=loguearse" onSubmit="return validarIngreso()">
 		<div class="col_formulario">	
 		<label for="email_usuario">Correo electrónico</label>
@@ -13,8 +14,7 @@
 			<input type="password" name="password_usuario" id="password_usuario" placeholder="ej: Masdem22"/>
 			</div>
 			<div class="col_formulario">
-				<div id="error"></div>
-			<input type="submit" name="login" id="login" class="buttom_green" value="Acceder"/>
+				<button type="submit" name="login" id="login" class="buttom_green">Acceder</button>
 			</div>
 		</form>
 	

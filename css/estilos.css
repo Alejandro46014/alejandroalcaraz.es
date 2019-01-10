@@ -191,7 +191,18 @@ ul{
 }
 
 .buttom_green:hover{
+	
 	background-color: #7DF56A;
+}
+
+.buttom_red:focus{
+	
+	border: none;
+}
+
+.buttom_green:focus{
+	
+	border: none;
 }
 
 .comprar-boton.hollow,
@@ -562,13 +573,36 @@ nav.navegacion-principal a.enlace_registro{
 		background-color: #fe4918;
 	}
 	
+	button.user_icono{
+		
+		width: 150px;
+		background-color: transparent;
+		border: 1px solid #fe4918;
+		color: #ffffff;
+	display: inline-block;
+	text-decoration: none;
+	padding: 5px 10px;
+	font-family: 'oswald', sans-serif;
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-top: 8px;
+	transition: all .1s ease;
+		
+		
+	}
+	
+	button.user_icono i{
+		
+		margin-right: 5px;
+		}
+	
 	div.menu_usuarios{
 		
 		width: 150px;
 		
 		float: right;
 	}
-	div.menu_extendido{
+	div.extendido_usuarios{
 		
 		width: 150px;
 	}
@@ -601,13 +635,22 @@ div.menu-movil span{
 	border-radius: 5px;
 }
 
+@media only screen and (max-width:768px){
+	
+	button.user_icono{
+		
+		display: none;
+	}
+	
+}
+
 @media only screen and (min-width:768px){
 	
 	div.menu-movil{
 		display: none;
 	}
 	
-	div.menu_extendido{
+	div.extendido_usuarios{
 		
 		display: none;
 	}
@@ -672,8 +715,8 @@ div.terminos{
 	text-align: center;
 }
 
-div.formulario_small label spam,
-div.formulario label spam{
+div.formulario_small #fallo,
+div.formulario #fallo{
 	
 	color: red;
 }
