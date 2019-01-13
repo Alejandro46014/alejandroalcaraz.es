@@ -17,7 +17,7 @@
 				<button class="user_icono"><i class="fas fa-user"></i><span><?php echo($usuario->getNombreUsuario()); ?></span></button>
 				<div class="extendido_usuarios">
 			<a href="?controller=Enlaces&action=navegacionPaginas&pagina=cerrarSesion">Cerrar sesión</a>
-			<a href="?controller=Enlaces&action=navegacionPaginas&pagina=modificarPerfil">Modificar perfil</a>	
+			<a href="?controller=Usuarios&action=modificarPerfil&id=<?php echo $usuario->getIdUsuario(); ?>">Modificar perfil</a>	
 				</div>
 			 </div>
 		</nav>

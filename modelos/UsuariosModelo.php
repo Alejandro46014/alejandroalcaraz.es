@@ -161,11 +161,11 @@ class UsuariosModelo{
 			
 			if($resultado['pais_usuario'] != "NULL" || $resultado['ciudad_usuario'] != "NULL" || $resultado['poblacion_usuario'] != "NULL" || $resultado['descripcion_usuario'] != "NULL" || $resultado['imagen_usuario'] != "NULL"){
 				
-				$usuario->ampliado_usuario="true";
+				$usuario->ampliado_usuario=true;
 				
 			}else{
 				
-				$usuario->ampliado_usuario="false";
+				$usuario->ampliado_usuario=false;
 				
 			}
 			

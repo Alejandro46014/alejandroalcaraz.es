@@ -161,6 +161,23 @@ class UsuariosControlador{
 	}
 	
 	
+	#========================MODIFICAR USUARIO=======================
+	
+	public function modificarPerfil(){
+		echo("aqui");
+		if(isset($_GET['id'])){
+			
+			$id=$_GET['id'];
+			
+			$user=new UsuariosModelo();
+			
+			$usuario=$user->getById($id);
+			
+			require_once("plantillas/modificarperfil.php");
+		}
+	}
+	
+	
 	#========================ACTUALIZAR USUARIO=======================
 	
 	public function actualizarUsuario(){
@@ -170,6 +187,9 @@ class UsuariosControlador{
 		$id=$_GET['id'];
 		$nombre=$_POST['nombre_usuario'];
 		$email=$_POST['email_usuario'];
+			
+			$mal=false;
+			$mal2=false;
 			
 		$patron="/[a-zA-Z0-9]/";
 			
@@ -193,11 +213,14 @@ class UsuariosControlador{
 			
 			if($mal || $mal2){
 				
-				header("location:?controller=Enlaces&action=navegacionPaginas&pagina=modificarPerfil");
+				$_GET['id']=$id;
+				$controller=new UsuariosControlador();
+				
+				$controller->modificarPerfil();
 				
 			}else{
 				
-				$user=new UsuarioModelo();
+				$user=new UsuariosModelo();
 				
 				$usuario=$user->getById($id);
 				$usuario->setNombreUsuario($nombre);
@@ -205,7 +228,30 @@ class UsuariosControlador{
 				
 				$respuesta=$usuario->actualizar();
 				
-		require_once("plantillas/modificarPerfil.php");
+				if($respuesta){
+				
+					echo '<script type="text/javascript">
+				alert("Los datos se actualizaron correctamente");
+				</script>';
+					
+				$_GET['id']=$id;
+				
+				$controller=new UsuariosControlador();
+				
+				$controller->modificarPerfil();
+				
+				}else{
+					
+					echo '<script type="text/javascript">
+				alert("Los datos no se pudieron modificar");
+				</script>';
+					
+				$_GET['id']=$id;
+				
+				$controller=new UsuariosControlador();
+				
+				$controller->modificarPerfil();
+				}
 				
 				
 			}
@@ -222,16 +268,111 @@ class UsuariosControlador{
 	
 	public function actualizarPassword(){
 		
-		
+		if(isset($_GET['id'])){
+			
+			
+			$id=$_GET['id'];
+			$password=$_POST['password_usuario'];
+			$rpassword=$_POST['rpassword_usuario'];
+			$patron="/[a-zA-Z0-9]/";
+			
+			$mal=false;
+			$mal2=false;
+			$mal3=false;
+			
+			$user=new UsuariosModelo();
+			
+			if(empty($password) || empty($rpassword)){
+				
+				echo '<script type="text/javascript">
+				alert("Debe rellenar los campos");
+				</script>';
+				
+				$mal=true;
+			}
+			
+			if(!preg_match($patron,$password)){
+				
+				echo '<script type="text/javascript">
+				alert("La contraseña no puede contener caracteres especiales");
+				</script>';
+				
+				$mal2=true;
+				
+			}
+			
+			if($password != $rpassword){
+				
+				echo '<script type="text/javascript">
+				alert("Las contraseñas no coinciden");
+				</script>';
+				
+				$mal3=true;
+			}
+			
+			if($mal || $mal2 || $mal3){
+				
+				$_GET['id']=$id;
+				$controller=new UsuariosControlador();
+				
+				$controller->modificarPerfil();
+				
+			}else{
+				
+				$encriptar=crypt($password,'$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+				
+				
+				$usuario=$user->getById($id);
+				$usuario->setPasswordUsuario($encriptar);
+				
+				$respuesta=$usuario->actualizarPassword();
+				
+				
+				if($respuesta){
+					
+						echo '<script type="text/javascript">
+				alert("La contraseña se actualizó correctamente");
+				</script>';
+					
+				$_GET['id']=$id;
+				
+				$controller=new UsuariosControlador();
+				
+				$controller->modificarPerfil();
+					
+				}else{
+					
+						echo '<script type="text/javascript">
+				alert("La contraseña no se pudo actualizar");
+				</script>';
+					
+				$_GET['id']=$id;
+				
+				$controller=new UsuariosControlador();
+				
+				$controller->modificarPerfil();
+					
+				}
+			}
+		}
 		
 	}
+	
 	
 	#========================RESTABLECER PASSWORD======================
 	
 	
-	public function restablrcerPassword(){
+	public function restablecerPassword(){
 		
-		
+		$email=$_POST['email_usuario'];
+		$password=$_POST['password_usuario'];
+			$rpassword=$_POST['rpassword_usuario'];
+			$patron="/[a-zA-Z0-9]/";
+			
+			$mal=false;
+			$mal2=false;
+			$mal3=false;
+			
 	}
 	
 	
