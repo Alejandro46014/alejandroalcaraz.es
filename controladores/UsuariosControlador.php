@@ -159,5 +159,81 @@ class UsuariosControlador{
 			}
 		}
 	}
+	
+	
+	#========================ACTUALIZAR USUARIO=======================
+	
+	public function actualizarUsuario(){
+		
+		if(isset($_GET['id'])){
+			
+		$id=$_GET['id'];
+		$nombre=$_POST['nombre_usuario'];
+		$email=$_POST['email_usuario'];
+			
+		$patron="/[a-zA-Z0-9]/";
+			
+			if(empty($nombre) || empty($email)){
+				
+				echo '<script type="text/javascript">
+				alert("Debe rellenar los campos");
+				</script>';
+				
+				$mal=true;
+				
+			}elseif(!preg_match($patron,$nombre)){
+				
+				echo '<script type="text/javascript">
+				alert("El nombre no puede contener caracteres especiales");
+				</script>';
+				
+				$mal2=true;
+				
+			}
+			
+			if($mal || $mal2){
+				
+				header("location:?controller=Enlaces&action=navegacionPaginas&pagina=modificarPerfil");
+				
+			}else{
+				
+				$user=new UsuarioModelo();
+				
+				$usuario=$user->getById($id);
+				$usuario->setNombreUsuario($nombre);
+				$usuario->setEmailUsuario($email);
+				
+				$respuesta=$usuario->actualizar();
+				
+		require_once("plantillas/modificarPerfil.php");
+				
+				
+			}
+			
+			
+		
+	}
+		
+	}
+	
+	
+	#========================ACTUALIZAR PASSWORD=======================
+	
+	
+	public function actualizarPassword(){
+		
+		
+		
+	}
+	
+	#========================RESTABLECER PASSWORD======================
+	
+	
+	public function restablrcerPassword(){
+		
+		
+	}
+	
+	
 }
 
