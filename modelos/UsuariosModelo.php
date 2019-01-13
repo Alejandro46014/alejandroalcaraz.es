@@ -439,7 +439,7 @@ class UsuariosModelo{
 			
 			if($numero_filas==0){
 				
-				return("No");
+				return(false);
 				
 			}elseif($numero_filas==1){
 			
@@ -455,7 +455,7 @@ class UsuariosModelo{
 			
 			$consulta->execute();
 				
-				return("Si");
+				return(true);
 			
 			}elseif($numero_filas < 1){
 				

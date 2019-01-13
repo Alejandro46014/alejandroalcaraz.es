@@ -3,7 +3,7 @@
 	<div class="formulario_small clearfix">
 		<h2>Login</h2>
 		<div><p id="fallo"></p></div>
-		<form method="post" action="?controller=Usuarios&action=loguearse" onSubmit="return validarIngreso()">
+		<form method="post" action="?controller=Usuarios&action=restablecerPassword" onSubmit="return validarResetPassword()">
 		<div class="col_formulario">	
 		<label for="email_usuario">Correo electrónico</label>
 			<input type="email" name="email_usuario" id="email_usuario" placeholder="Alex@hot.com"/>
@@ -13,13 +13,19 @@
 		<label for="password_usuario">Contraseña</label>
 			<input type="password" name="password_usuario" id="password_usuario" placeholder="ej: Masdem22"/>
 			</div>
+			
 			<div class="col_formulario">
-				<button type="submit" name="login" id="login" class="buttom_green">Acceder</button>
+		<label for="rpassword_usuario">Repite contraseña</label>
+			<input type="password" name="rpassword_usuario" id="rpassword_usuario" placeholder="ej: Masdem22"/>
+			</div>
+			
+			<div class="col_formulario">
+				<small>Introduzca la dirección de correo electrónico con la que se registró</small>
+			</div>
+			<div class="col_formulario">
+				<button type="submit" name="reset" id="reset" class="buttom_green">Actualizar</button>
 			</div>
 		</form>
-		<div class="recuperar_password">
-			<a href="?controller=Enlaces&action=navegacionPaginas&pagina=restablecerPassword">¿Olvidaste tu contraseña?</a>
-		</div>
 	</div>
 	</div>
 </section>

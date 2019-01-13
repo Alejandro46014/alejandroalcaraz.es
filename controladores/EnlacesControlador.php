@@ -24,9 +24,9 @@ class EnlacesControlador{
 				
 				require_once("plantillas/modificarperfil.php");
 				
-			}elseif($pagina=="#"){
+			}elseif($pagina=="restablecerPassword"){
 				
-				exit();
+				require_once("plantillas/restablecerpassword.php");
 				
 			}elseif($pagina=="login"){
 				

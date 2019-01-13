@@ -364,6 +364,8 @@ class UsuariosControlador{
 	
 	public function restablecerPassword(){
 		
+		if(isset($_POST['reset'])){
+			
 		$email=$_POST['email_usuario'];
 		$password=$_POST['password_usuario'];
 			$rpassword=$_POST['rpassword_usuario'];
@@ -373,8 +375,103 @@ class UsuariosControlador{
 			$mal2=false;
 			$mal3=false;
 			
+			
+			$user=new UsuariosModelo();
+			
+			if(empty($password) || empty($rpassword) || empty($email)){
+				
+				echo '<script type="text/javascript">
+				alert("Debe rellenar los campos");
+				</script>';
+				
+				$mal=true;
+			}
+			
+			if(!preg_match($patron,$password)){
+				
+				echo '<script type="text/javascript">
+				alert("La contraseña no puede contener caracteres especiales");
+				</script>';
+				
+				$mal2=true;
+				
+			}
+			
+			if($password != $rpassword){
+				
+				echo '<script type="text/javascript">
+				alert("Las contraseñas no coinciden");
+				</script>';
+				
+				$mal3=true;
+			}
+			
+			if($mal || $mal2 || $mal3){
+				
+				$_GET['pagina']="restablecerPassword";
+				$controller=new EnlacesControlador();
+				
+				$controller->navegacionPaginas();
+				
+			}else{
+				
+				
+				$encriptar=crypt($password,'$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+				
+				
+				$usuario=$user->getById($id);
+				$usuario->setPasswordUsuario($encriptar);
+				$usuario->setEmailUsuario($email);
+				
+				$respuesta=$usuario->restablecerPassword();
+				
+				
+				if($respuesta){
+					
+						echo '<script type="text/javascript">
+				alert("La contraseña se actualizó correctamente");
+				</script>';
+					
+				$_GET['pagina']="index";
+				
+				$controller=new EnlacesControlador();
+				
+				$controller->navegacionPaginas();
+					
+				}elseif(!$respuesta){
+					
+						echo '<script type="text/javascript">
+				alert("No existe ningun usuario con ese correo electrónico");
+				</script>';
+					
+				$_GET['pagina']="restablecerPassword";
+				
+				$controller=new EnlacesControlador();
+				
+				$controller->navegacionPaginas();
+					
+				}elseif($respuesta=="Error"){
+					
+						echo '<script type="text/javascript">
+				alert("Por favor contacte con el administrador");
+				</script>';
+					
+					$_GET['pagina']="index";
+				
+				$controller=new EnlacesControlador();
+				
+				$controller->navegacionPaginas();
+					
+				}
+			}
+				
+		}
+			
 	}
-	
-	
+		
+}
+
+
+
 }
 
