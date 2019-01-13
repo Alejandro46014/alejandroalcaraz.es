@@ -448,6 +448,7 @@ class UsuariosModelo{
 			$consulta=$conexion->prepare($sql);
 			
 			
+			$consulta->bindParam(':email',$email,PDO::PARAM_STR);
 			$consulta->bindParam(':password',$password,PDO::PARAM_STR);
 			
 			

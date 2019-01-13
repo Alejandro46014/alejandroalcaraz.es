@@ -468,10 +468,9 @@ class UsuariosControlador{
 		}
 			
 	}
-		
+
+	
 }
 
 
-
-}
 

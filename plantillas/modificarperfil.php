@@ -16,7 +16,7 @@
 	<div class="formulario clearfix" id="actualizar">
 		<h2>Modificar perfil</h2>
 		<div ><p id="fallo"></p></div>
-		<form method="post" action="?controller=Usuarios&action=actualizarUsuario&id=<?php echo $usuario->getIdUsuario(); ?>" onSubmit="return validarActualizar()">
+		<form method="post" action="?controller=Usuarios&action=actualizarUsuario&id=<?php echo $usuario->getIdUsuario(); ?>" onSubmit="return validarActualizar">
 		<div class="col_2_formulario">	
 		<label for="nombre_usuario">Nombre</label>
 			<input type="text" name="nombre_usuario" id="nombre_usuario" placeholder="Nombre" value="<?php echo($usuario->getNombreUsuario()); ?>" />
@@ -66,7 +66,7 @@
 	<div class="formulario clearfix" id="ampliar">
 		<h2>Ampliar perfil</h2>
 		<div ><p id="fallo"></p></div>
-		<form method="post" action="?controller=Usuarios&action=crearUsuario" onSubmit="return validarRegistro()">
+		<form method="post" action="?controller=Usuarios&action=crearUsuario" onSubmit="return validarAmpliarPerfil()">
 		
 			<div class="col_formulario">
 				

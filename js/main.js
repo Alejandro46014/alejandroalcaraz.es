@@ -31,7 +31,7 @@ function validarRegistro(){
 
 
 
-	if(usuario != ""){
+	if(usuario !== ""){
 
 
 
@@ -80,7 +80,7 @@ function validarRegistro(){
 
 
 
-	if(password != ""){
+	if(password !== ""){
 
 
 
@@ -120,7 +120,7 @@ function validarRegistro(){
 
 		}
 		
-		if(rpassword != password){
+		if(rpassword !== password){
 			
 			
 			document.getElementById("fallo").innerHTML = "Las contraseñas no coinciden.";
@@ -143,7 +143,7 @@ function validarRegistro(){
 
 
 
-	if(email != ""){
+	if(email !== ""){
 
 
 
@@ -165,9 +165,6 @@ function validarRegistro(){
 
 
 		}
-
-
-
 	}
 
 
@@ -253,7 +250,160 @@ function validarIngreso(){
 }
 
 
+/*=============================================
 
+VALIDAR ACTUALIZAR
+
+=============================================*/
+
+function validarActualizar(){
+	
+	var usuario = document.querySelector("#nombre_usuario").value;
+	
+	if(usuario !== ""){
+		
+		var caracteres = usuario.length;
+		
+		if(caracteres > 10){
+			
+			document.getElementById("fallo").innerHTML = "Introduzca menos de 10 caracteres";
+			
+			return false;
+		}
+	}
+	
+	return true;
+}
+
+
+
+/*=====  FIN VALIDAR ACTUALIZAR  ======*/
+
+/*=============================================
+
+VALIDAR ACTUALIZARPASSWORD
+
+=============================================*/
+
+function validarActualizarPassword(){
+	
+	var email=document.getElementById("email_usuario").value;
+	
+	var password=document.getElementById("password_usuario").value;
+	
+	var rpassword=document.getElementById("rpassword_usuario").value;
+	
+	if(email==="" || password==="" || rpassword===""){
+		
+		document.getElementById("fallo").innerHTML = "Todos los campos son obligatorios.";
+		
+	}else{
+		
+		
+	/* VALIDAR PASSWORD */
+
+
+
+	if(password !== ""){
+
+
+
+		var caracteres = password.length;
+
+		var expresion = /^[a-zA-Z0-9]*$/;
+
+
+
+		if(caracteres < 8){
+
+
+
+			document.getElementById("fallo").innerHTML = "Escriba por favor un mínimo de 8 caracteres.";
+
+
+			document.getElementById("password_usuario").style.border="2px solid red";
+
+			return false;
+
+		}
+
+
+
+		if(!expresion.test(password)){
+
+
+
+			document.getElementById("fallo").innerHTML = "No escriba caracteres especiales.";
+
+
+			document.getElementById("password_usuario").style.border="2px solid red";
+
+			return false;
+
+
+
+		}
+		
+		if(rpassword !== password){
+			
+			
+			document.getElementById("fallo").innerHTML = "Las contraseñas no coinciden.";
+			
+			document.getElementById("password_usuario").style.border="2px solid red";
+			document.getElementById("rpassword_usuario").style.border="2px solid red";
+			
+			
+			
+			return false;
+		}
+
+		
+		if(email !== ""){
+
+
+
+		var expresion = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+
+
+		if(!expresion.test(email)){
+
+
+
+			document.getElementById("fallo").innerHTML = "Escriba correctamente el Email.";
+
+
+			document.getElementById("email_usuario").style.border="2px solid red";
+
+			return false;
+
+
+
+		}
+	}
+
+	}
+		
+		
+	}
+	
+	return true;
+}
+
+
+
+/*=====  FIN VALIDAR ACTUALIZARPASSWORD  ======*/
+
+/*=============================================
+
+VALIDAR AMPLIARPERFIL
+
+=============================================*/
+
+
+
+
+/*=====  FIN VALIDAR AMPLIARPERFIL  ======*/
 
 
 (function(){
