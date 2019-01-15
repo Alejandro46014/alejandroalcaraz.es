@@ -7,7 +7,7 @@ VALIDAR REGISTRO
 
 function validarRegistro(){
 
-
+"use strict";
 
 	var usuario = document.querySelector("#nombre_usuario").value;	
 
@@ -257,71 +257,38 @@ VALIDAR ACTUALIZAR
 =============================================*/
 
 function validarActualizar(){
-	
-	var usuario = document.querySelector("#nombre_usuario").value;
-	
+
+"use strict";
+
+	var usuario = document.querySelector("#nombre_usuario").value;	
+
+
+	var email = document.querySelector("#email_usuario").value;
+
+
+
+
+	/* VALIDAR USUARIO */
+
+
+
 	if(usuario !== ""){
-		
+
+
+
 		var caracteres = usuario.length;
-		
-		if(caracteres > 10){
-			
-			document.getElementById("fallo").innerHTML = "Introduzca menos de 10 caracteres";
-			
-			return false;
-		}
-	}
-	
-	return true;
-}
-
-
-
-/*=====  FIN VALIDAR ACTUALIZAR  ======*/
-
-/*=============================================
-
-VALIDAR ACTUALIZARPASSWORD
-
-=============================================*/
-
-function validarActualizarPassword(){
-	
-	var email=document.getElementById("email_usuario").value;
-	
-	var password=document.getElementById("password_usuario").value;
-	
-	var rpassword=document.getElementById("rpassword_usuario").value;
-	
-	if(email==="" || password==="" || rpassword===""){
-		
-		document.getElementById("fallo").innerHTML = "Todos los campos son obligatorios.";
-		
-	}else{
-		
-		
-	/* VALIDAR PASSWORD */
-
-
-
-	if(password !== ""){
-
-
-
-		var caracteres = password.length;
 
 		var expresion = /^[a-zA-Z0-9]*$/;
 
 
 
-		if(caracteres < 8){
+		if(caracteres > 10){
 
 
 
-			document.getElementById("fallo").innerHTML = "Escriba por favor un mínimo de 8 caracteres.";
+			document.getElementById("fallo").innerHTML = "Escriba por favor menos de 10 caracteres.";
 
-
-			document.getElementById("password_usuario").style.border="2px solid red";
+			document.getElementById("nombre_usuario").style.border="2px solid red";
 
 			return false;
 
@@ -329,36 +296,31 @@ function validarActualizarPassword(){
 
 
 
-		if(!expresion.test(password)){
+		if(!expresion.test(usuario)){
 
 
 
 			document.getElementById("fallo").innerHTML = "No escriba caracteres especiales.";
 
 
-			document.getElementById("password_usuario").style.border="2px solid red";
+			document.getElementById("nombre_usuario").style.border="2px solid red";
 
 			return false;
 
 
 
 		}
-		
-		if(rpassword !== password){
-			
-			
-			document.getElementById("fallo").innerHTML = "Las contraseñas no coinciden.";
-			
-			document.getElementById("password_usuario").style.border="2px solid red";
-			document.getElementById("rpassword_usuario").style.border="2px solid red";
-			
-			
-			
-			return false;
-		}
 
-		
-		if(email !== ""){
+
+
+	}
+
+
+	/* VALIDAR EMAIL*/
+
+
+
+	if(email !== ""){
 
 
 
@@ -382,14 +344,102 @@ function validarActualizarPassword(){
 		}
 	}
 
-	}
-		
-		
-	}
 	
-	return true;
+
+return true;
+
+
+
 }
 
+
+/*=====  FIN VALIDAR ACTUALIZAR  ======*/
+
+/*=============================================
+
+VALIDAR ACTUALIZARPASSWORD
+
+=============================================*/
+
+function validarActualizarPassword(){
+	
+	"use strict";
+
+	var password = document.querySelector("#password_usuario").value;	
+	
+	
+	var rpassword = document.querySelector("#rpassword_usuario").value;	
+
+
+
+	if(password === "" || rpassword === ""){
+		
+		
+		document.getElementById("fallop").innerHTML = "Debe rellenar los campos.";
+		
+		return false;
+		
+	}
+
+	if(password !== ""){
+
+
+
+		var caracteres = password.length;
+
+		var expresion = /^[a-zA-Z0-9]*$/;
+
+
+
+		if(caracteres > 8){
+
+
+
+			document.getElementById("fallop").innerHTML = "Escriba por favor menos de 8 caracteres.";
+
+			document.getElementById("password_usuario").style.border="2px solid red";
+
+			return false;
+
+		}
+
+
+
+		if(!expresion.test(password)){
+
+
+
+			document.getElementById("fallop").innerHTML = "No escriba caracteres especiales.";
+
+
+			document.getElementById("password_usuario").style.border="2px solid red";
+
+			return false;
+
+
+
+		}
+
+		if(password !== rpassword){
+			
+			document.getElementById("fallop").innerHTML = "Las contraseñas no coinciden.";
+
+
+			document.getElementById("rpassword_usuario").style.border="2px solid red";
+
+			return false;
+
+			
+		}
+
+	}
+
+
+return true;
+
+
+
+}
 
 
 /*=====  FIN VALIDAR ACTUALIZARPASSWORD  ======*/
