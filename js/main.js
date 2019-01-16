@@ -450,7 +450,103 @@ VALIDAR AMPLIARPERFIL
 
 =============================================*/
 
+function validarResetPassword(){
+	
+	"use strict";
+	
+	var email = document.querySelector("#email_usuario").value;
+	
+	var password = document.querySelector("#password_usuario").value;
+	
+	var rpassword = document.querySelector("#rpassword_usuario").value;
+	
+	if(email === "" || password === "" || rpassword === ""){
+		
+		
+		document.getElementById("fallor").innerHTML = "Debe rellenar los campos.";
+		
+		return false;
+		
+	}
+	
+	if(password !== ""){
 
+
+
+		var caracteres = password.length;
+
+		var expresion = /^[a-zA-Z0-9]*$/;
+
+
+
+		if(caracteres > 8){
+
+
+
+			document.getElementById("fallor").innerHTML = "Escriba por favor menos de 8 caracteres.";
+
+			document.getElementById("password_usuario").style.border="2px solid red";
+
+			return false;
+
+		}
+
+
+
+		if(!expresion.test(password)){
+
+
+
+			document.getElementById("fallor").innerHTML = "No escriba caracteres especiales.";
+
+
+			document.getElementById("password_usuario").style.border="2px solid red";
+
+			return false;
+
+
+
+		}
+
+		if(password !== rpassword){
+			
+			document.getElementById("fallor").innerHTML = "Las contraseñas no coinciden.";
+
+
+			document.getElementById("rpassword_usuario").style.border="2px solid red";
+
+			return false;
+
+			
+		}
+
+	}
+	
+	if(email !== ""){
+		
+		var expresion = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+
+
+		if(!expresion.test(email)){
+
+
+
+			document.getElementById("fallo").innerHTML = "Escriba correctamente el Email.";
+
+
+			document.getElementById("email_usuario").style.border="2px solid red";
+
+			return false;
+
+			
+	}
+
+	
+}
+
+	return true;
+}
 
 
 /*=====  FIN VALIDAR AMPLIARPERFIL  ======*/

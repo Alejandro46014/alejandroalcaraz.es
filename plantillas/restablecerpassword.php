@@ -2,7 +2,7 @@
 <div class="contenedor">
 	<div class="formulario_small clearfix">
 		<h2>Login</h2>
-		<div><p id="fallo"></p></div>
+		<div><p id="fallor"></p></div>
 		<form method="post" action="?controller=Usuarios&action=restablecerPassword" onSubmit="return validarResetPassword()">
 		<div class="col_formulario">	
 		<label for="email_usuario">Correo electrónico</label>

@@ -716,7 +716,11 @@ div.terminos{
 }
 
 div.formulario_small #fallo,
-div.formulario #fallo{
+div.formulario #fallo,
+div.formulario_small #fallop,
+div.formulario #fallop,
+div.formulario_small #fallor,
+div.formulario #fallor{
 	
 	color: red;
 }
