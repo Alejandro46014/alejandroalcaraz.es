@@ -1,6 +1,6 @@
 <?php  if(!$_SESSION['login']){
 	
-	header("location: ?Enlaces&action=navegacionPaginas&pagina=index");
+	header("location: ?controller=Enlaces&action=navegacionPaginas&pagina=index");
 }
 
 ?>
@@ -66,12 +66,12 @@
 	<div class="formulario clearfix" id="ampliar">
 		<h2>Ampliar perfil</h2>
 		<div ><p id="fallo"></p></div>
-		<form method="post" action="?controller=Usuarios&action=crearUsuario" onSubmit="return validarAmpliarPerfil()">
+		<form method="post" action="?controller=Usuarios&action=ampliarPerfil&id=<?php echo($usuario->getIdUsuario()); ?>" onSubmit="return validarAmpliarPerfil()" >
 		
 			<div class="col_formulario">
 				
 			<label for="imagen_usuario">Imagen</label>	
-			<input type="file" name="imagen_usuario" id="imagen_usuario"/>
+			<input type="file" name="archivo" id="imagen_usuario"/>
 			
 			</div>
 			
@@ -113,12 +113,12 @@
 	<div class="formulario clearfix" id="ampliar">
 		<h2>Ampliar perfil</h2>
 		<div ><p id="fallo"></p></div>
-		<form method="post" action="?controller=Usuarios&action=crearUsuario" onSubmit="return validarRegistro()">
+		<form method="post" action="?controller=Usuarios&action=actualizaePerfil&id=<?php echo($usuario->getIdUsuario()); ?>" onSubmit="return validarAmpliar()" enctype="multipart/form-data">
 		
 			<div class="col_formulario">
 				
 			<label for="imagen_usuario">Imagen</label>	
-			<input type="file" name="imagen_usuario" id="imagen_usuario"/>
+			<input type="file" name="archivo" id="imagen_usuario"/>
 			
 			</div>
 			

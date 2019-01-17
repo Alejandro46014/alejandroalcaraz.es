@@ -1,6 +1,7 @@
 <?php
 require_once("modelos/TiposUsuariosModelo.php");
 require_once("EnlacesControlador.php");
+require_once("librerias/libreria.php");
 
 class UsuariosControlador{
 	
@@ -469,7 +470,142 @@ class UsuariosControlador{
 			
 	}
 
+	#=======================AMPLIARPERFIL=====================
 	
+	public function ampliarPerfil(){
+		
+		if(isset($_GET['id'])){
+			
+			$id=$_GET['id'];
+			$ciudad=$_POST['ciudad_usuario'];
+			$pais=$_POST['pais_usuario'];
+			$poblacion=$_POST['poblacion_usuario'];
+			$descripcion=$_POST['descripcion_usuario'];
+			$patron="/[a-zA-Z]/";
+			
+			$mal=false;
+			$mal2=false;
+			$mal3=false;
+			
+			if(empty($ciudad) && empty($poblacion) && empty($pais) && empty($_FILES['archivo'])){
+				
+				$_GET['id']=$id;
+				
+				$controller=new UsuariosControlador();
+				
+				$controller->modificarPerfil();
+				
+			}
+			
+			if(isset($_POST['archivo'])){//imagen
+				
+				$imagen=subir_archivos();
+				
+			}else{
+				
+				$imagen="";
+				
+			}//imagen
+			
+			//pais
+			
+			if($pais != ""){
+				
+				if(!preg_match($patron,$pais)){
+					
+					echo '<script type="text/javascript">
+				alert("No introduzca caracteres especiales);
+				</script>';
+					
+					$mal=true;
+					
+				}
+			}//pais
+			
+			//ciudad
+			
+			if($ciudad != ""){
+				
+				if(!preg_match($patron,$ciudad)){
+					
+					echo '<script type="text/javascript">
+				alert("No introduzca caracteres especiales);
+				</script>';
+					
+					$mal2=true;
+					
+				}
+			}//ciudad
+			
+			//población
+			
+			if($poblacion != ""){
+				
+				if(!preg_match($patron,$poblacion)){
+					
+					echo '<script type="text/javascript">
+				alert("No introduzca caracteres especiales);
+				</script>';
+					
+					$mal3=true;
+					
+				}
+			}//población
+			
+			if($mal || $mal2 || $mal3){
+				
+					echo '<script type="text/javascript">
+				alert("Compruebe los campos e intentelo de nuevo);
+				</script>';
+				
+				$_GET['id']=$id;
+				
+				$controller=new UsuariosControlador();
+				
+				$controller->modificarPerfil();
+			}else{
+				
+				$usuario=new UsuariosModelo();
+				
+				$usuario->setIdUsuario($id);
+				$usuario->setPaisUsuario($pais);
+				$usuario->setCiudadUsuario($ciudad);
+				$usuario->setPoblacionUsuario($poblacion);
+				$usuario->setDescripcionUsuario($descripcion);
+			    $usuario->setImagenUsuario($imagen);
+				
+				$respuesta=$usuario->ampliar();
+				
+				if($respuesta){
+					
+					echo '<script type="text/javascript">
+				alert("Sus datos se actualizaron");
+				</script>';
+					
+				$_GET['id']=$id;
+				
+				$controller=new UsuariosControlador();
+				
+				$controller->modificarPerfil();
+					
+				}else{
+					
+					echo '<script type="text/javascript">
+				alert("Sus datos no se pudieron actualizar, contacte con el administrador");
+				</script>';
+					
+				$_GET['id']=$id;
+				
+				$controller=new UsuariosControlador();
+				
+				$controller->modificarPerfil();
+					
+				}
+				
+			}
+			
+		}
+	}
 }
 
 
