@@ -28,7 +28,7 @@ function enlaceModificarValoracion($id){
 function subir_archivos(){
 	
 	
-        $directorio = "img/";
+    $directorio = "img/usuarios/";
         
 	$directorio_imagen="img/usuarios/".$_FILES['archivo']['name'];
 	$tipo=$_FILES['archivo']['type'];
@@ -62,7 +62,16 @@ function subir_archivos(){
 		
 		
 	}
+	
+	if($_FILES['archivo']['name'] != ""){
+		
+	
         return $directorio_imagen;
+		
+	}else{
+		
+		return("");
+	}
 }
 
 function subir_multiples_archivos(){

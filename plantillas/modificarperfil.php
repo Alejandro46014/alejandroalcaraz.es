@@ -65,8 +65,8 @@
 	
 	<div class="formulario clearfix" id="ampliar">
 		<h2>Ampliar perfil</h2>
-		<div ><p id="fallo"></p></div>
-		<form method="post" action="?controller=Usuarios&action=ampliarPerfil&id=<?php echo($usuario->getIdUsuario()); ?>" onSubmit="return validarAmpliarPerfil()" >
+		<div ><p id="falloa"></p></div>
+		<form method="post" action="?controller=Usuarios&action=ampliarPerfil&id=<?php echo($usuario->getIdUsuario()); ?>" onSubmit="return validarAmpliarPerfil()" enctype="multipart/form-data" >
 		
 			<div class="col_formulario">
 				
@@ -112,7 +112,7 @@
 	
 	<div class="formulario clearfix" id="ampliar">
 		<h2>Ampliar perfil</h2>
-		<div ><p id="fallo"></p></div>
+		<div ><p id="falloa"></p></div>
 		<form method="post" action="?controller=Usuarios&action=actualizaePerfil&id=<?php echo($usuario->getIdUsuario()); ?>" onSubmit="return validarAmpliar()" enctype="multipart/form-data">
 		
 			<div class="col_formulario">

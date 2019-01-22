@@ -481,6 +481,7 @@ class UsuariosControlador{
 			$pais=$_POST['pais_usuario'];
 			$poblacion=$_POST['poblacion_usuario'];
 			$descripcion=$_POST['descripcion_usuario'];
+			$imagen="";
 			$patron="/[a-zA-Z]/";
 			
 			$mal=false;
@@ -497,14 +498,10 @@ class UsuariosControlador{
 				
 			}
 			
-			if(isset($_POST['archivo'])){//imagen
+			if($_FILES['archivo']['name'] != ""){//imagen
 				
 				$imagen=subir_archivos();
-				
-			}else{
-				
-				$imagen="";
-				
+						
 			}//imagen
 			
 			//pais

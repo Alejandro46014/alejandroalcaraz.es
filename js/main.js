@@ -446,7 +446,7 @@ return true;
 
 /*=============================================
 
-VALIDAR AMPLIARPERFIL
+VALIDAR RESTABLECER PASSWORD
 
 =============================================*/
 
@@ -549,8 +549,55 @@ function validarResetPassword(){
 }
 
 
-/*=====  FIN VALIDAR AMPLIARPERFIL  ======*/
+/*=====  FIN VALIDAR RESTABLECER PASSWORD  ======*/
 
+/*=============================================
+
+VALIDAR AMPLIARPERFIL
+
+=============================================*/
+
+function validarAmpliarPerfil(){
+	
+	"use strict";
+	
+	var pais = document.querySelector("#pais_usuario").value;
+	
+	/*var ciudad = document.querySelector("#ciudad_usuario").value;
+	
+	var poblacion = document.querySelector("#poblacion_usuario").value;*/
+	
+	
+	if(pais !== ""){
+		
+		var expresion = /^[a-zA-Z]*$/;
+
+
+
+		if(!expresion.test(pais)){
+
+
+
+			document.getElementById("falloa").innerHTML = "Solo se aceptan caracteres alfabeticos.";
+
+
+			document.getElementById("pais_usuario").style.border="2px solid red";
+
+			return false;
+
+			
+	}
+
+	
+}
+	
+	
+	
+	return false;
+}
+
+
+/*=====  FIN VALIDAR RESTABLECER PASSWORD  ======*/
 
 (function(){
 	
