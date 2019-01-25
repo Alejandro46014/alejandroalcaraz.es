@@ -11,7 +11,7 @@
 		<button id="btn_ampliar">Ampliar perfil</button>
 		<button id="btn_password">Cambio contraseña</button>
 	</div>
-	<div class="row"></div>
+	
 <div class="contenedor">
 	<div class="formulario clearfix" id="actualizar">
 		<h2>Modificar perfil</h2>
@@ -34,7 +34,7 @@
 
 	</div><!--FORMULARIO ACTUALIZAR-->
 	
-	<div class="row"></div>
+	
 	<div class="formulario clearfix" id="password">
 		<h2>Cambiar contraseña</h2>
 		<div ><p id="fallop"></p></div>
@@ -59,14 +59,14 @@
 	
 	</div>
 	
-	<div class="row"></div>
+	
 
 	<?php if($usuario->getAmpliadoUsuario()){ ?>
 	
 	<div class="formulario clearfix" id="ampliar">
 		<h2>Ampliar perfil</h2>
 		<div ><p id="falloa"></p></div>
-		<form method="post" action="?controller=Usuarios&action=ampliarPerfil&id=<?php echo($usuario->getIdUsuario()); ?>" onSubmit="return validarAmpliarPerfil()" enctype="multipart/form-data" >
+		<form method="post" action="?controller=Usuarios&action=ampliarPerfil&id=<?php echo($usuario->getIdUsuario()); ?>"  enctype="multipart/form-data" >
 		
 			<div class="col_formulario">
 				
@@ -101,6 +101,10 @@
 				<textarea name="descripcion_usuario" id="descripcion_usuario" cols="10" rows="10"><?php echo $usuario->getDescripcionUsuario(); ?></textarea>
 			</div>
 			<div class="col_formulario">
+				
+				<div class="leyenda">
+				<small>Nombre la imagen con su nombre completo sin espacios.</small>
+				</div>
 			
 			<input type="submit" name="ampliar_perfil" id="btn_ampliar_perfil" class="buttom_green" value="Guardar"/>
 			</div>
@@ -113,7 +117,7 @@
 	<div class="formulario clearfix" id="ampliar">
 		<h2>Ampliar perfil</h2>
 		<div ><p id="falloa"></p></div>
-		<form method="post" action="?controller=Usuarios&action=actualizaePerfil&id=<?php echo($usuario->getIdUsuario()); ?>" onSubmit="return validarAmpliar()" enctype="multipart/form-data">
+		<form method="post" action="?controller=Usuarios&action=actualizaePerfil&id=<?php echo($usuario->getIdUsuario()); ?>"  enctype="multipart/form-data">
 		
 			<div class="col_formulario">
 				
@@ -145,10 +149,14 @@
 			<div class="col_formulario">
 				
 			<label for="descripción">Algo sobre ti.....</label>
-				<textarea name="descripcion" id="descripción" cols="10" rows="10"></textarea>
+				<textarea name="descripcion_usuario" id="descripcion_usuario" cols="10" rows="10"></textarea>
 			</div>
 			<div class="col_formulario">
 			
+				<div class="leyenda">
+				<small>Nombre la imagen con su nombre completo sin espacios.</small>
+				</div>
+				
 			<input type="submit" name="ampliar_perfil" id="btn_ampliar_perfil" class="buttom_green" value="Guardar"/>
 			</div>
 		</form>

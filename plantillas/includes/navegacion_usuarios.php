@@ -14,7 +14,15 @@
 			<a href="?controller=Enlaces&action=navegacionPaginas&pagina=galeria">Galería</a>
 			<a href="?controller=Enlaces&action=navegacionPaginas&pagina=entradas">Entradas</a>
 			<div class="menu_usuarios"> 
+			<?php if($usuario->getImagenUsuario() != "NULL" && $usuario->getImagenUsuario() != ""){  ?>
+				
+				<button class="user_icono"><img src="<?php echo($usuario->getImagenUsuario()); ?>" class="imagen_usuario"/><span><?php echo($usuario->getNombreUsuario()); ?></span></button>
+				
+			<?php }else{ ?>
+				
 				<button class="user_icono"><i class="fas fa-user"></i><span><?php echo($usuario->getNombreUsuario()); ?></span></button>
+				
+			<?php } ?>
 				<div class="extendido_usuarios">
 			<a href="?controller=Enlaces&action=navegacionPaginas&pagina=cerrarSesion">Cerrar sesión</a>
 			<a href="?controller=Usuarios&action=modificarPerfil&id=<?php echo $usuario->getIdUsuario(); ?>">Modificar perfil</a>	

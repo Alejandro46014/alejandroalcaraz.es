@@ -587,13 +587,23 @@ nav.navegacion-principal a.enlace_registro{
 	font-size: 1.2em;
 	margin-top: 8px;
 	transition: all .1s ease;
+	cursor: pointer;
+		
+		
+	}
+	
+	img.imagen_usuario{
+		
+		width: 50px;
+		margin-right: 20px;
 		
 		
 	}
 	
 	button.user_icono i{
 		
-		margin-right: 5px;
+		margin-right: 20px;
+		
 		}
 	
 	div.menu_usuarios{
@@ -875,11 +885,11 @@ div.col_3_formulario label{
 .navegacion_galerias{
 	
 	text-align: center;
+	margin-bottom: 50px;
 }
 
-#btn_nueva_york,
-#btn_melilla,
-#btn_paisajes{
+div.navegacion_galerias button{
+	
 	display: inline-block;
 	text-decoration: none;
 	border-radius: 5px;
@@ -891,15 +901,16 @@ div.col_3_formulario label{
 	font-size: 1.2em;
 	margin-top: 20px;
 	transition: all .2s ease;
+	cursor: pointer;
+	
 }
 
-#btn_nueva_york:hover,
-#btn_melilla:hover,
-#btn_paisajes:hover{
+div.navegacion_galerias button:hover{
 	
 	color: #fe4918;
 	background-color: #ffffff;
 }
+
 
 #nueva_york,
 #melilla,

@@ -477,11 +477,13 @@ class UsuariosControlador{
 		if(isset($_GET['id'])){
 			
 			$id=$_GET['id'];
+			$user = new UsuariosModelo();
+			$usuario=$user->getById($id);
 			$ciudad=$_POST['ciudad_usuario'];
 			$pais=$_POST['pais_usuario'];
 			$poblacion=$_POST['poblacion_usuario'];
 			$descripcion=$_POST['descripcion_usuario'];
-			$imagen="";
+			$imagen=$usuario->getImagenUsuario();
 			$patron="/[a-zA-Z]/";
 			
 			$mal=false;

@@ -557,19 +557,22 @@ VALIDAR AMPLIARPERFIL
 
 =============================================*/
 
-function validarAmpliarPerfil(){
+	
+	function validarAmpliarPerfil(){
 	
 	"use strict";
 	
 	var pais = document.querySelector("#pais_usuario").value;
 	
-	/*var ciudad = document.querySelector("#ciudad_usuario").value;
+	var ciudad = document.querySelector("#ciudad_usuario").value;
 	
-	var poblacion = document.querySelector("#poblacion_usuario").value;*/
+	var poblacion = document.querySelector("#poblacion_usuario").value;
+	
 	
 	
 	if(pais !== ""){
-		
+
+
 		var expresion = /^[a-zA-Z]*$/;
 
 
@@ -578,23 +581,70 @@ function validarAmpliarPerfil(){
 
 
 
-			document.getElementById("falloa").innerHTML = "Solo se aceptan caracteres alfabeticos.";
+			document.getElementById("falloa").innerHTML = "No escriba caracteres especiales.";
 
 
 			document.getElementById("pais_usuario").style.border="2px solid red";
 
 			return false;
 
-			
+
+
+		}
+
+	}
+	
+	if(ciudad !== ""){
+
+
+		var expresion = /^[a-zA-Z]*$/;
+
+
+
+		if(!expresion.test(ciudad)){
+
+
+
+			document.getElementById("falloa").innerHTML = "No escriba caracteres especiales.";
+
+
+			document.getElementById("ciudad_usuario").style.border="2px solid red";
+
+			return false;
+
+
+
+		}
+
+	}
+		
+		if(poblacion !== ""){
+
+
+		var expresion = /^[a-zA-Z]*$/;
+
+
+
+		if(!expresion.test(poblacion)){
+
+
+
+			document.getElementById("falloa").innerHTML = "No escriba caracteres especiales.";
+
+
+			document.getElementById("poblacion_usuario").style.border="2px solid red";
+
+			return false;
+
+
+
+		}
+
 	}
 
-	
+	return true;
 }
-	
-	
-	
-	return false;
-}
+
 
 
 /*=====  FIN VALIDAR RESTABLECER PASSWORD  ======*/
@@ -905,6 +955,38 @@ $( document ).ready(function() {
 		$('#melilla').hide();
 		$('#nueva_york').hide();
 		$('#paisajes').show();
+		
+	});
+	
+	/*----------------------Navegación modificar perfil----------------------*/
+	
+	
+	$('#actualizar').hide();
+	$('#password').hide();
+	$('#ampliar').hide();
+	
+	$('#btn_actualizar').on('click',function(){
+		
+		$('#ampliar').hide();
+		$('#password').hide();
+		$('#actualizar').show();
+		
+	});
+	
+	$('#btn_password').on('click',function(){
+		
+		
+		$('#actualizar').hide();
+		$('#ampliar').hide();
+		$('#password').show();
+		
+	});
+	
+	$('#btn_ampliar').on('click',function(){
+		
+		$('#actualizar').hide();
+		$('#password').hide();
+		$('#ampliar').show();
 		
 	});
 	
