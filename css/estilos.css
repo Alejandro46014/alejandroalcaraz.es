@@ -1622,7 +1622,7 @@ div.paquetes .tabla-precio input{
 	margin-right: 10px;
 }
 
-/*-------RESUMEN-----------*/
+/*-------DEBATES Y ENTRADAS-----------*/
 
 #error{
 	clear: both;
@@ -1631,52 +1631,72 @@ div.paquetes .tabla-precio input{
 	display: none;
 }
 
-div.resumen p{
-	font-size: 1.2em;
-	text-transform: uppercase;
+div.tabla a{
+    text-decoration: none;
 }
-
-div.resumen div.extras{
-	float: left;
-	width: 50%;
-	padding: 30px;
-}
-
-div.extras div.orden{
+    
+div.tabla{
+	overflow-x:auto;
 	
+}
+
+table.tabla img{
+	
+	width: 30%;
+	
+}
+
+@media only screen and (max-width:468px){
+	
+	table.tabla img{
+	
+	width: 50%;
+	
+}
+	
+	}
+
+table{
+	width: 100%;
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+	border-spacing: 0;
+		
+}
+
+td,tr{
+	text-align: center;
+	padding: 8px;
+	border-bottom: 1px solid #939191;
+}
+
+td.td-1{
 	text-align: left;
-	margin-bottom: 10px;
+	padding: 8px;
+	border-bottom: 1px solid #939191;
+	word-spacing: none;
 }
 
-div.extras div.orden input{
+tr:nth-child(even){
+	background-color: #BAB9B9;
+}
+
+tr:hover{
 	
-	margin: 10px 0 0 0;
+	background-color: #939191;
 }
-
-div.resumen div.total{
+@media only screen and (min-width:768px){
 	
-	float: right;
-	width: 50%;
-	padding: 30px;
+	div.tabla{
+		
+		width: 70%;
+		margin: 50px auto;
+	}
+	
+	table.tabla{
+		width: 100%;
+	}
 }
-
-div.resumen input{
-	display: block;
-	margin: 10px auto;
-}
-
-#lista-productos{
-	background-color: #e1e1e1;
-	padding: 20px;
-	display: none;
-}
-
-#suma-total{
-	color: #fe4918;
-	text-align-last: center;
-	font-size: 2em;
-}
-
 
 
 /* ==========================================================================

@@ -74,6 +74,57 @@ function subir_archivos(){
 	}
 }
 
+#=====================SUBIR IMAGEN DEBATE===================
+
+function subir_imagen(){
+	
+	
+    $directorio = "img/debates/";
+        
+	$directorio_imagen="img/debates/".$_FILES['imagen_debate']['name'];
+	$tipo=$_FILES['imagen_debate']['type'];
+	$jpeg="image/jpeg";
+	$png="image/png";
+	$gif="image/gif";
+	$directorio = $directorio . basename( $_FILES['imagen_debate']['name']); 
+	if($tipo==$jpeg || $tipo==$gif || $tipo==$png){
+	if(move_uploaded_file($_FILES['imagen_debate']['tmp_name'], $directorio)) {
+		
+		echo("<script type='text/javascript'>
+			alert('El archivo ". basename( $_FILES['imagen_debate']['name']). " ha sido subido');
+			</script>");
+		
+		
+		
+		
+		
+		} else{
+		
+		echo('<script type="text/javascript">
+		alert("Ha ocurrido un error, intentelo de nuevo!, si el problema persiste contacte con el administrador");
+		</script>');
+		
+                	
+}
+	}else{
+		echo('<script type="text/javascript">
+		alert("No es un tipo de archivo permitido(.png || .jpeg || .gif)");
+					</script>');
+		
+		
+	}
+	
+	if($_FILES['imagen_debate']['name'] != ""){
+		
+	
+        return $directorio_imagen;
+		
+	}else{
+		
+		return("");
+	}
+}
+
 function subir_multiples_archivos(){
     $imagenes=[];
     $i=0;

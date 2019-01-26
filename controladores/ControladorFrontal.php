@@ -35,6 +35,14 @@
 				$controller= new EntradasControlador();
 
 				break; 
+				
+				case 'Debates':
+
+				require_once('modelos/DebatesModelo.php');
+
+				$controller= new DebatesControlador();
+
+				break; 
                             
                         
 		}
@@ -53,7 +61,8 @@
 
 						'Usuarios'=>['cerrarSesion','index','actualizarUsuario','actualizarPassword','restablecerPassword','ampliarPerfil','listarUsuarios','listarUsuarioId','modificarPerfil','darseBajaUsuario','crearUsuario','login','loguearse','bajaVista'],
                         'Enlaces'=>['navegacionPaginas'],
-                        'Entradas'=>['listarEntradas', 'nuevaEntrada','eliminarEntrada']
+                        'Entradas'=>['listarEntradas','nuevaEntrada','eliminarEntrada'],
+						'Debates'=>['listarDebates','crearDebate','entrarDebate']
                                                 
 						);
 
