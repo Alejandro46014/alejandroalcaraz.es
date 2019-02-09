@@ -12,7 +12,7 @@ require_once('modelos/ConectarModelo.php');
                 $id=$_SESSION['id'];
 					$usuario=new UsuariosModelo();
 					$usuario=$usuario->getById($id);
-               
+               //o esto
                 }
 
 
