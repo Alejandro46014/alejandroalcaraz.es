@@ -8,7 +8,7 @@ require_once('modelos/ConectarModelo.php');
                     $_SESSION['id']="";
 					
                 }else{
-					
+		//poner esto			
                 $id=$_SESSION['id'];
 					$usuario=new UsuariosModelo();
 					$usuario=$usuario->getById($id);
