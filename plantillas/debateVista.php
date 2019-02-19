@@ -46,6 +46,8 @@
 	?>
 	<div class="comentario_entrada">
 		
+		<div class="clearfix">
+		
 		<div class="autor_entrada">
 			
 			<h5><?php echo($usuarioentrada->getNombreUsuario()); ?></h5>
@@ -57,7 +59,11 @@
 			<p><?php echo($entrada->getFechaEntrada()); ?></p>
 			
 		</div>
+		</div>
 		
+		<div class="comentario">
+			<p><?php echo($entrada->getComentarioEntrada()); ?></p>
+		</div>
 	</div>
 	
 	<?php } ?>

@@ -47,7 +47,7 @@
 		  </nav>
 		  <div class="informacion-evento">
 			  <div class="clearfix">
-				  <?php setlocale(LC_ALL, 'es_ES'); ?>
+				  <?php setlocale (LC_TIME,"spanish"); //setlocale(LC_ALL, 'es_ES.UTF-8'); ?>
 		  <p class="fecha"><i class="fas fa-calendar-alt"></i> <?php echo strftime("%A %e %B %Y", mktime(date("d-M-Y"))); ?></p>
 			  <p class="ciudad"><i class="fas fa-map-marker-alt"></i> Valencia, España</p>
 		  </div>

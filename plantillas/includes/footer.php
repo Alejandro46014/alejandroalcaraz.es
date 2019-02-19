@@ -35,7 +35,9 @@
 	
 
 
-	
+	<script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
+  
+  
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="js/jquery.countdown.js"></script>
 	<script src="js/jquery.lettering.js"></script>

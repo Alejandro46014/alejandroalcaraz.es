@@ -296,7 +296,7 @@ ul{
 div.hero{
 	
 	background-image: url(../img/cabecera_nuevaYork.JPG);
-	height: 50vh;
+	height: 100vh;
 	background-position: top center;
 	background-size: cover;
 	
@@ -914,10 +914,13 @@ div.navegacion_galerias button:hover{
 
 #nueva_york,
 #melilla,
-paisajes{
+#paisajes{
 	
 	margin-top: 80px;
+	height: 100vh;
 }
+
+
 
 
 /*---------talleres---------------*/
@@ -1697,6 +1700,75 @@ tr:hover{
 		width: 100%;
 	}
 }
+
+
+/*------------------------ENTRADAS------------------------*/
+
+div.comentario_entrada{
+	
+	margin-top: 25px;
+	padding-bottom: 20px;
+	border: 1px solid #fe4918;
+	border-radius: 15px;
+	box-shadow: 10px 10px 50px #000000;
+	
+}
+
+div.autor_entrada{
+	
+	font-size: 2em;
+	margin-left: 15px;
+	
+}
+
+div.fecha_entrada{
+	
+	color: #fe4918;
+	font-weight: bold;
+	text-transform: capitalize;
+	margin-left: 15px;
+	margin-top: -35px;
+	
+	
+}
+
+div.comentario p{
+	
+	font-weight:400;
+	width: 80%;
+	text-align: justify;
+	margin: auto;
+	
+}
+
+div.comentario {
+	
+	
+	
+}
+
+@media only screen and (min-width:768px){
+	
+	div.autor_entrada{
+	
+	width: 50%;
+	float: left;
+	
+}
+
+div.fecha_entrada{
+	
+	
+	width: 50%;
+	float: left;
+	margin-top: 34px;
+	margin-left: -350px;
+}
+
+
+	
+}
+
 
 
 /* ==========================================================================

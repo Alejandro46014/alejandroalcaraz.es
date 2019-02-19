@@ -857,6 +857,8 @@ L.marker([39.551160,-0.626431]).addTo(map)
 
 /*-------------empieza jquery---------------*/
 
+tinymce.init({ selector:'textarea#comentario_entrada' });
+
 $( document ).ready(function() {
 'use strict';
 	
