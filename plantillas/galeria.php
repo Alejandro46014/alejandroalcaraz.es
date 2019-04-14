@@ -6,6 +6,7 @@
 		<button id="btn_nueva_york">New York</button>
 		<button id="btn_melilla">Melilla</button>
 		<button id="btn_paisajes">Paisajes</button>
+		<button id="btn_rosco">Rosco</button>
 	</div>
 
 	<div class="contenedor">
@@ -83,6 +84,39 @@
 			<a href="img/paisajes/buenas_63.jpg"><img src="img/paisajes/pequenas/buenas_63.jpg"></a>
 			
 			
+		</div>
+	</div>
+		
+		<div id="rosco">
+		<h2>Rosco</h2>
+		<div class="fotorama" data-nav="thumbs" data-navposition="top" data-transition="dissolve" data-width="1100"
+     data-maxwidth="100%">
+			
+  			<a href="img/rosco/rosco_1.jpg"><img src="img/rosco/pequenas/rosco_1.jpg" data-caption=""></a>
+ 			<a href="img/rosco/rosco_2.jpg"><img src="img/rosco/pequenas/rosco_2.jpg" data-caption=""></a>
+			<a href="img/rosco/rosco_6.jpg"><img src="img/rosco/pequenas/rosco_6.jpg" data-caption=""></a>
+			<a href="img/rosco/rosco_8.jpg"><img src="img/rosco/pequenas/rosco_8.jpg" data-caption=""></a>
+			<a href="img/rosco/rosco_9.jpg"><img src="img/rosco/pequenas/rosco_9.jpg" data-caption=""></a>
+			<a href="img/rosco/rosco_11.jpg"><img src="img/rosco/pequenas/rosco_11.jpg" data-caption=""></a>
+			<a href="img/rosco/rosco_13.jpg"><img src="img/rosco/pequenas/rosco_13.jpg" data-caption=""></a>
+			<a href="img/rosco/rosco_15.jpg"><img src="img/rosco/pequenas/rosco_15.jpg" data-caption=""></a>
+		
+		</div>
+	</div>
+		
+		<div id="rosco_apa">
+		<h2>Rosco</h2>
+		<div class="fotorama" data-nav="thumbs" data-navposition="top" data-transition="dissolve" data-width="1100"
+     data-maxwidth="100%">
+			
+  			<a href="img/rosco/rosco_3.jpg"><img src="img/rosco/pequenas/rosco_3.jpg" data-caption=""></a>
+ 			<a href="img/rosco/rosco_4.jpg"><img src="img/rosco/pequenas/rosco_4.jpg" data-caption=""></a>
+			<a href="img/rosco/rosco_5.jpg"><img src="img/rosco/pequenas/rosco_5.jpg" data-caption=""></a>
+			<a href="img/rosco/rosco_7.jpg"><img src="img/rosco/pequenas/rosco_7.jpg" data-caption=""></a>
+			<a href="img/rosco/rosco_10.jpg"><img src="img/rosco/pequenas/rosco_10.jpg" data-caption=""></a>
+			<a href="img/rosco/rosco_12.jpg"><img src="img/rosco/pequenas/rosco_12.jpg" data-caption=""></a>
+			<a href="img/rosco/rosco_14.jpg"><img src="img/rosco/pequenas/rosco_14.jpg" data-caption=""></a>
+		
 		</div>
 	</div>
 </div>

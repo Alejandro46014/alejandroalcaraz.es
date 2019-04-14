@@ -934,11 +934,15 @@ $( document ).ready(function() {
 	$('#nueva_york').hide();
 	$('#melilla').hide();
 	$('#paisajes').hide();
+	$('#rosco').hide();
+	$('#rosco_apa').hide();
 	
 	$('#btn_nueva_york').on('click',function(){
 		
 		$('#melilla').hide();
 		$('#paisajes').hide();
+		$('#rosco').hide();
+		$('#rosco_apa').hide();
 		$('#nueva_york').show();
 		
 	});
@@ -948,6 +952,8 @@ $( document ).ready(function() {
 		
 		$('#paisajes').hide();
 		$('#nueva_york').hide();
+		$('#rosco').hide();
+		$('#rosco_apa').hide();
 		$('#melilla').show();
 		
 	});
@@ -956,7 +962,20 @@ $( document ).ready(function() {
 		
 		$('#melilla').hide();
 		$('#nueva_york').hide();
+		$('#rosco').hide();
+		$('#rosco_apa').hide();
 		$('#paisajes').show();
+		
+	});
+	
+	$('#btn_rosco').on('click',function(){
+		
+		$('#melilla').hide();
+		$('#nueva_york').hide();
+		$('#paisajes').hide();
+		$('#rosco').show();
+		$('#rosco_apa').show();
+		
 		
 	});
 	
