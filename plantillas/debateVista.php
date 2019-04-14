@@ -50,7 +50,7 @@
 		
 		<div class="autor_entrada">
 			
-			<h5><?php echo($usuarioentrada->getNombreUsuario()); ?></h5>
+			<h4><?php echo($usuarioentrada->getNombreUsuario()); ?></h4>
 			
 		</div>
 		
@@ -61,9 +61,18 @@
 		</div>
 		</div>
 		
+<<<<<<< HEAD
+		<div class="comentario_entrada">
+			
+			<p><?php echo($entrada->getComentarioEntrada()); ?></p>
+			
+		</div>
+		
+=======
 		<div class="comentario">
 			<p><?php echo($entrada->getComentarioEntrada()); ?></p>
 		</div>
+>>>>>>> origin/master
 	</div>
 	
 	<?php } ?>

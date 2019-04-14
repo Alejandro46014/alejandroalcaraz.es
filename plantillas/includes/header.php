@@ -5,7 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Alejandro</title>
-  <meta name="description" content="">
+	<link rel="canonical" href="http://www.alejandroalcaraz.es/index.php"/>
+  <meta name="description" content="Web personal con galería de imagenes y zona de discusión">
+	<meta name="keywords" content="HTML,CSS,PHP,JavaScript">
+  <meta name="author" content="Alejandro Alcaraz">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   

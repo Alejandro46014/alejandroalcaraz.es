@@ -43,7 +43,7 @@
 		
 		
 			<tr>
-				<td class="td-1"><a href="?controller=Debates&action=entrarDebate&id=<?php echo($debate->getIdDebate()); ?>"><?php echo($debate->getTituloDebate()); ?></a></td>
+				<td class="td-1"><a class="titulo_debate" href="?controller=Debates&action=entrarDebate&id=<?php echo($debate->getIdDebate()); ?>"><?php echo($debate->getTituloDebate()); ?></a></td>
 				<td><a href="?controller=Debates&action=entrarDebate&id=<?php echo($debate->getIdDebate()); ?>"><img src="<?php echo($debate->getImagenDebate()); ?>" alt="Imagen no disponible"/></a></td>
 		
 			</tr>

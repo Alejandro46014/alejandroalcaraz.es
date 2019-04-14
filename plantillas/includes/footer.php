@@ -4,12 +4,13 @@
 			<h3>Sobre la <span>vida</span></h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper dui ut nibh hendrerit aliquam. Donec iaculis metus et dignissim iaculis.</p>
 			</div>
-			<div class="ultimos-tweets">
-			<h3>Ultimas <span>entradas</span></h3>
+			<div class="enlaces_interes">
+			<h3>Enlaces de <span>interés</span></h3>
 				<ul>
-				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper dui ut nibh hendrerit aliquam. Donec iaculis metus et dignissim iaculis.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper dui ut nibh hendrerit aliquam. Donec iaculis metus et dignissim iaculis.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper dui ut nibh hendrerit aliquam. Donec iaculis metus et dignissim iaculis.</li>
+					<li><a href="https://ordenarte.es/">Ordenarte</a></li>
+					<li><a href="https://ordenarte.es/">Ordenarte</a></li>
+					<li><a href="https://ordenarte.es/">Ordenarte</a></li>
+					<li><a href="https://ordenarte.es/">Ordenarte</a></li>
 				</ul>
 			</div>
 			<div class="menu-footer">
