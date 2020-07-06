@@ -20,7 +20,7 @@
 				
 			<?php }else{ ?>
 				
-				<button class="user_icono"><i class="fas fa-user"></i><span><?php echo($usuario->getNombreUsuario()); ?></span></button>
+				<button class="user_icono"><i class="fas fa-user"></i><span><?php echo($usuario->getNombreUsuario()." ". $usuario->getPaisUsuario()); ?></span></button>
 				
 			<?php } ?>
 				<div class="extendido_usuarios">

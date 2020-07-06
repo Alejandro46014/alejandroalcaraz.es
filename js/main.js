@@ -935,6 +935,7 @@ $( document ).ready(function() {
 	$('#melilla').hide();
 	$('#paisajes').hide();
 	$('#rosco').hide();
+	$('#pepe').hide();
 	$('#rosco_apa').hide();
 	
 	$('#btn_nueva_york').on('click',function(){
@@ -947,6 +948,17 @@ $( document ).ready(function() {
 		
 	});
 	
+	$('#btn_pepe').on('click',function(){
+		
+		$('#melilla').hide();
+		$('#paisajes').hide();
+		$('#rosco').hide();
+		$('#rosco_apa').hide();
+		$('#nueva_york').hide();
+		$('#pepe').show();
+		
+	});
+	
 	$('#btn_melilla').on('click',function(){
 		
 		
@@ -954,6 +966,7 @@ $( document ).ready(function() {
 		$('#nueva_york').hide();
 		$('#rosco').hide();
 		$('#rosco_apa').hide();
+		$('#pepe').hide();
 		$('#melilla').show();
 		
 	});
@@ -964,6 +977,7 @@ $( document ).ready(function() {
 		$('#nueva_york').hide();
 		$('#rosco').hide();
 		$('#rosco_apa').hide();
+		$('#pepe').hide();
 		$('#paisajes').show();
 		
 	});
@@ -973,6 +987,7 @@ $( document ).ready(function() {
 		$('#melilla').hide();
 		$('#nueva_york').hide();
 		$('#paisajes').hide();
+		$('#pepe').hide();
 		$('#rosco').show();
 		$('#rosco_apa').show();
 		
