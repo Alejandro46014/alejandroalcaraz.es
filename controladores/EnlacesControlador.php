@@ -16,6 +16,10 @@ class EnlacesControlador{
 				
 				require_once("plantillas/galeria.php");
 				
+			}elseif($pagina=="casa"){
+				
+				require_once("plantillas/casa.php");
+				
 			}elseif($pagina=="registro"){
 				
 				require_once("plantillas/registro.php");

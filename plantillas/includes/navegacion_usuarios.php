@@ -12,6 +12,7 @@
 		<nav class="navegacion-principal clearfix">
 			<a href="?controller=Enlaces&action=navegacionPaginas&pagina=index">Inicio</a>
 			<a href="?controller=Enlaces&action=navegacionPaginas&pagina=galeria">Galería</a>
+			<a href="?controller=Enlaces&action=navegacionPaginas&pagina=casa">Mi hogar</a>
 			<a href="?controller=Debates&action=listarDebates">Debates</a>
 			<div class="menu_usuarios"> 
 			<?php if($usuario->getImagenUsuario() != "NULL" && $usuario->getImagenUsuario() != ""){  ?>
